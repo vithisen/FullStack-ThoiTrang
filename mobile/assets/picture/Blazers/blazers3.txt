@@ -1,0 +1,11 @@
+Name: Wool Blend Blazer 
+
+Brand: H&M
+
+Price: USD 190 
+
+Description: Crafted from a premium woven fabric blend containing wool and linen, this blazer offers a structured silhouette with a refined texture, combining warmth, breathability, and timeless sophistication.
+
+Image: balzers3.png
+
+Image[]: balzers3_1.png, balzers3_2.png

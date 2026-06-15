@@ -1,0 +1,11 @@
+Name: Padded Crossbody Bag
+
+Brand: H&M 
+
+Price: $39.99
+
+Description: Padded crossbody bag in woven fabric. Adjustable shoulder strap with slider buckle, zipper at top, two outer compartments with zipper, and an inner compartment with zipper for essentials.
+
+image: accesories4.png
+
+image[]: accesories4_1.png, accesories4_2.png

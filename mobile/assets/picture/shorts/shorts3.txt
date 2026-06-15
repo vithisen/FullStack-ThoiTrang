@@ -1,0 +1,11 @@
+Name: adidas Originals x Liberty London Firebird Shorts
+
+Brand: adidas
+
+Price: $36.40 
+
+Description: Relaxed-fit shorts featuring decorative design details, combining modern style with everyday comfort. The roomy silhouette offers ease of movement, while the eye-catching accents create a fashionable and contemporary look.
+
+Image: shorts3.png
+
+Image[]: shorts3_1.png, shorts3_2.png

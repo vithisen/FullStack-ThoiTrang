@@ -1,0 +1,11 @@
+Name: Suede Jacket with Pockets
+
+Brand: Mango
+
+Price: USD 380
+
+Description: Crafted from 100% genuine goat suede leather, this jacket features an exceptionally soft texture, substantial feel, and long-lasting durability. Finished with a smooth inner lining, it provides maximum comfort and a refined wearing experience.
+
+Image: outerwear2.png
+
+image[]: outerwear2_1.png, outerwear2_2.png

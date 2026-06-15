@@ -1,0 +1,11 @@
+Name: Girls' Crossbody Bag 
+
+Brand: Rabity
+
+Price: $14.50
+
+Description: A charming pink crossbody bag for girls, featuring a sweet and elegant design. Perfect for outings, parties, and everyday adventures, it adds a stylish finishing touch to any outfit.
+
+Image:  k_accesories3.jpg
+
+Image[]: k_accesories3_1.jpg, k_accesories3.jpg

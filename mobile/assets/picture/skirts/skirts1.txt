@@ -1,0 +1,11 @@
+Name: Flared Cotton Skirt
+
+Brand: Mango
+
+Price: $49.80 
+
+Description: MANGO midi skirt featuring a minimalist and elegant design with a naturally flared A-line silhouette. Crafted for a graceful and timeless look, it offers effortless sophistication and versatile everyday styling.
+
+Image: skirts1.png
+
+Image[]: skirts1_1.png, skirts1_2.png

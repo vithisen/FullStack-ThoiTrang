@@ -1,0 +1,11 @@
+Name: Girls' Unicorn Backpack 
+
+Brand: Rabity
+
+Price: $17.20
+
+Description: A charming Unicorn-themed backpack for girls, featuring a cute and playful design. Perfect for preschool, outings, and everyday adventures, it adds a fun and magical touch to any look.
+
+Image:  k_accesories4.jpg
+
+Image[]: k_accesories4_1.jpg, k_accesories4.jpg

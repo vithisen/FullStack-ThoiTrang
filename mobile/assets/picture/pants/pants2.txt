@@ -1,0 +1,12 @@
+Name: Wide-Leg Pull-On Pants
+
+Brand: H&M
+
+Price: $24.99
+
+Description: H&M women's cream wide-leg trousers featuring a relaxed, straight-cut silhouette and a comfortable fit. The discreet elastic waistband provides a secure yet flexible fit around the waist while maintaining a clean, refined look.
+
+Image: pants2.avif
+
+Image[]: pants2_1.avif, pants2_2.avif
+

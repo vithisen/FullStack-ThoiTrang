@@ -1,0 +1,11 @@
+Name: Short-Sleeve Cotton Dress for Girls
+
+Brand: Rabity
+
+Price: $10.30
+
+Description: A cream-colored short-sleeve dress adorned with delicate pink floral prints, featuring a sweet vintage-inspired design. Soft and charming, it creates a dreamy and elegant look for young girls.
+
+Image: kclothes3.jpg
+
+Image[]: kclothes3_1.jpg, kclothes3_2.jpg

@@ -1,0 +1,11 @@
+Name: Cropped Poplin Shirt (Gigi Shirt)
+
+Brand: Mango
+
+Price: €29.99O
+
+Image: shirtblouse1.png
+
+Images[]: shirtblouse2.png, shirtblouse3.png
+
+Description: A structured white button-up poplin shirt crafted from a lightweight cotton-viscose blend. It features an oversized classic collar, a cropped straight hemline, and relaxed long sleeves with exaggerated single-button statement cuffs.

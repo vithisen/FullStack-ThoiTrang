@@ -1,0 +1,11 @@
+Name: Adibreak Long Shorts
+
+Brand: adidas
+
+Price:$57.40 USD
+
+Description: The Adibreak Long Shorts are part of the adidas Originals collection. Featuring a relaxed long-length silhouette inspired by classic sportswear, these shorts combine comfort and iconic style for a casual, streetwear-inspired look.
+
+Image: short1.avif
+
+Image[]: short1_1.avif, short1_2.avif

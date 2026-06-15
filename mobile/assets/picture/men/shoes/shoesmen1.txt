@@ -1,0 +1,11 @@
+Name: Canvas Sneakers
+
+Brand: H&M
+
+Price: $39.99
+
+Description: Sneakers in cotton canvas with lacing at front. Canvas lining, canvas insoles, and patterned rubber soles.
+
+Image: shoesmen1.png
+
+Image[]: shoesmen1_1.png, shoesmen1_2.png

@@ -1,0 +1,11 @@
+Name: V-Neck Knit Cardigan
+
+Brand: UNIQLO
+
+Price: $22.62
+
+Description: Dark brown crochet-knit cardigan with a cropped silhouette, V-neckline, and front button closure. Features intricate openwork knit patterns, long sleeves, and a lightweight, feminine design.
+
+Image: knitwear1.png
+
+Image[]:knitwear1_1.png, knitwear1_2.png

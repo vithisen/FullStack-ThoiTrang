@@ -1,0 +1,8 @@
+name: Layered Sweater
+brand: H&M
+Price: $52.99
+Description: Oversized knit sweater featuring an asymmetrical lace-trim silk hem, designed with a modern layered aesthetic.
+
+
+image: sweater2.png
+image[]: sweater2_1.png, sweater2_2.png

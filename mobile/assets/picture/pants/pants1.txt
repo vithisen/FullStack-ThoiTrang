@@ -1,0 +1,11 @@
+Name: Wide-cut Pull-on Pants
+
+Brand: H&M
+
+Price: $19.99
+
+Description: Women's wide-leg palazzo pants featuring a minimalist design, offering a light, comfortable, and effortlessly elegant style
+
+Image: pants1.png
+
+Image[]: pants1_1.png, pants1_2.png

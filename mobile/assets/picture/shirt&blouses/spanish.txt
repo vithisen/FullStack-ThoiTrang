@@ -1,0 +1,11 @@
+Name: T-shirt SPANISH
+
+Brand: Mango
+
+Price: €16.99 
+
+Description: A classic short-sleeve crew neck t-shirt made from a lightweight cotton blend. It features a straight-cut silhouette with a black seriffed phrase reading "See you pronto" printed across the chest
+
+image: spanish1.png
+
+image[]: spanish1_1.png, spanish1_2.png

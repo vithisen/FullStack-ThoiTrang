@@ -1,0 +1,10 @@
+Name: Oversized Fisherman Rib Crew-Neck Jumper
+
+Brand: H&M
+
+Price: Approximately $25.00 – $33.00 USD
+Image: pullover.png
+Old Price: $43.00 USD
+Images[]: pullover1.png, pullover2.png
+
+Description: This oversized pullover jumper features a thick fisherman-rib knit texture in a versatile navy blue shade. Its relaxed silhouette is enhanced by deeply dropped shoulders, creating a laid-back and contemporary look. The voluminous sleeves with ribbed cuffs add a youthful touch while helping to retain warmth and comfort. Crafted for both style and practicality, this sweater is perfect for layering and can be effortlessly incorporated into casual streetwear outfits during cooler seasons.

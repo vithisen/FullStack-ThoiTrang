@@ -1,0 +1,13 @@
+Name: Long Sleeve High-Slit Maxi Dress 
+
+Brand: Monki 
+
+Image: sale3.png
+
+Price: $24.99
+
+Images[]: sale3_1.png, sale3_2.png
+
+Old Price: $39.99
+
+Description: This elegant and minimalist maxi column dress comes in a sophisticated Light Grey Melange shade, offering a timeless and versatile look. The design features a refined crew neckline and gently fitted long sleeves, creating a sleek and flattering silhouette. Crafted from soft, stretchy jersey knit fabric, it provides exceptional comfort for all-day wear. The standout details include a high side slit that adds a touch of femininity and ease of movement, along with practical side pockets for added convenience. Perfect for casual outings, the dress can be effortlessly paired with sneakers to create a youthful, modern, and stylish appearance.

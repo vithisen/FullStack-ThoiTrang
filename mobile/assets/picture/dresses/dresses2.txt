@@ -1,0 +1,11 @@
+Name: Smocked-Bodice Strappy Dress
+
+Brand: H&M
+
+Price: $39.99
+
+Description: Calf-length dress in a woven viscose blend with a smocked bodice and flared skirt. Narrow, adjustable shoulder straps, straight neckline with narrow ruffle trim, and gathers at waist. Unlined.
+
+Image: dresses2.png
+
+Image: dresses2_1.png, dresses2_2.png

@@ -1,0 +1,11 @@
+Name: Firebird Classic Shorts
+
+Brand: adidas
+
+Price:$38.30 USD
+
+Description: The Firebird Classic Shorts feature a relaxed fit with a mid-rise waistband, offering all-day comfort and effortless everyday style. Designed with a sporty yet versatile look, these shorts are perfect for casual wear and easy styling.
+
+Image: shorts2.png
+
+Image[]: shorts2_1.png, shorts2_2.png

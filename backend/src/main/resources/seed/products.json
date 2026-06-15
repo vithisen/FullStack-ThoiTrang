@@ -1,0 +1,1606 @@
+{
+  "categories": [
+    {
+      "name": "Clothes",
+      "image": "assets/picture/categories/clothes.webp"
+    },
+    {
+      "name": "Shoes",
+      "image": "assets/picture/categories/shoes.webp"
+    },
+    {
+      "name": "Accessories",
+      "image": "assets/picture/categories/accesories.webp"
+    },
+    {
+      "name": "New",
+      "image": "assets/picture/categories/new.webp"
+    },
+    {
+      "name": "Tops",
+      "parent": "Clothes",
+      "image": "assets/picture/catalog1/blouse.webp"
+    },
+    {
+      "name": "Dresses",
+      "parent": "Clothes",
+      "image": "assets/picture/dresses/dresses1.webp"
+    },
+    {
+      "name": "Bottoms",
+      "parent": "Clothes",
+      "image": "assets/picture/Jeans/jeans1.webp"
+    },
+    {
+      "name": "Outerwear",
+      "parent": "Clothes",
+      "image": "assets/picture/outerwear/outerwear1.webp"
+    },
+    {
+      "name": "Knitwear",
+      "parent": "Clothes",
+      "image": "assets/picture/knitwear/knitwear1.webp"
+    },
+    {
+      "name": "Men",
+      "image": "assets/picture/main page/main3_menhoodies.webp"
+    },
+    {
+      "name": "Kids",
+      "image": "assets/picture/kids/clothes/kclothes1.webp"
+    }
+  ],
+  "slideshows": [
+    {
+      "title": "Fashion Sale",
+      "description": "New season styles",
+      "buttonLabel": "Check",
+      "image": "assets/picture/main page/mainpage.webp",
+      "destinationUrl": "/catalog",
+      "displayOrder": 1
+    },
+    {
+      "title": "Street Clothes",
+      "description": "Daily essentials",
+      "buttonLabel": "Shop",
+      "image": "assets/picture/main page/main2.webp",
+      "destinationUrl": "/catalog",
+      "displayOrder": 2
+    },
+    {
+      "title": "New Collection",
+      "description": "Fresh arrivals",
+      "buttonLabel": "Explore",
+      "image": "assets/picture/main page/main3_newcollection.webp",
+      "destinationUrl": "/catalog",
+      "displayOrder": 3
+    }
+  ],
+  "products": [
+    {
+      "slug": "blazers-fitted-suit-blazer-1",
+      "sku": "FS-0001",
+      "name": "Fitted suit blazer",
+      "brand": "Mango",
+      "salePrice": "190.00",
+      "comparePrice": null,
+      "shortDescription": "Wool-blend fabric with a structured silhouette and medium-weight thickness, featuring a smooth, refined surface. Designed with a soft",
+      "description": "Wool-blend fabric with a structured silhouette and medium-weight thickness, featuring a smooth, refined surface. Designed with a soft inner lining that provides excellent warmth retention and maximum comfort against the skin.",
+      "category": "Outerwear",
+      "tags": [],
+      "images": [
+        "assets/picture/Blazers/blazers2.webp",
+        "assets/picture/Blazers/blazers2_1.webp",
+        "assets/picture/Blazers/blazers2_2.webp"
+      ],
+      "quantity": 31
+    },
+    {
+      "slug": "blazers-fitted-suit-blazer-2",
+      "sku": "FS-0002",
+      "name": "Fitted suit blazer",
+      "brand": "Mango",
+      "salePrice": "68.40",
+      "comparePrice": null,
+      "shortDescription": "Structured suiting fabric with a soft inner lining, offering comfort, a refined silhouette, and light warmth.",
+      "description": "Structured suiting fabric with a soft inner lining, offering comfort, a refined silhouette, and light warmth.",
+      "category": "Outerwear",
+      "tags": [],
+      "images": [
+        "assets/picture/Blazers/blazers1.webp",
+        "assets/picture/Blazers/Blazers1_1.webp",
+        "assets/picture/Blazers/Blazers1_2.webp"
+      ],
+      "quantity": 32
+    },
+    {
+      "slug": "blazers-wool-blend-blazer-3",
+      "sku": "FS-0003",
+      "name": "Wool Blend Blazer",
+      "brand": "H&M",
+      "salePrice": "190.00",
+      "comparePrice": null,
+      "shortDescription": "Crafted from a premium woven fabric blend containing wool and linen, this blazer offers a structured silhouette with",
+      "description": "Crafted from a premium woven fabric blend containing wool and linen, this blazer offers a structured silhouette with a refined texture, combining warmth, breathability, and timeless sophistication.",
+      "category": "Outerwear",
+      "tags": [],
+      "images": [
+        "assets/picture/Blazers/blazers3.webp",
+        "assets/picture/Blazers/blazers3_1.webp",
+        "assets/picture/Blazers/blazers3_2.webp"
+      ],
+      "quantity": 33
+    },
+    {
+      "slug": "blazers-short-sleeve-linen-blend-blazer-4",
+      "sku": "FS-0004",
+      "name": "Short-Sleeve Linen Blend Blazer",
+      "brand": "H&M",
+      "salePrice": "38.00",
+      "comparePrice": null,
+      "shortDescription": "Crafted from a lightweight linen and viscose blend, this woven fabric combines the natural textured character of linen",
+      "description": "Crafted from a lightweight linen and viscose blend, this woven fabric combines the natural textured character of linen with the softness and fluid drape of viscose. Breathable and moisture-wicking, it ensures lasting comfort while maintaining an effortlessly refined look.",
+      "category": "Outerwear",
+      "tags": [],
+      "images": [
+        "assets/picture/Blazers/blazers4.webp",
+        "assets/picture/Blazers/blazers4_1.webp"
+      ],
+      "quantity": 34
+    },
+    {
+      "slug": "cardigans-and-sweaters-layered-cardigan-5",
+      "sku": "FS-0005",
+      "name": "Layered Cardigan",
+      "brand": "Fashion Shop",
+      "salePrice": "19.99",
+      "comparePrice": null,
+      "shortDescription": "Long-sleeve layered cardigan-style T-shirt in black-brown tones, featuring a minimalist, soft, and modern aesthetic",
+      "description": "Long-sleeve layered cardigan-style T-shirt in black-brown tones, featuring a minimalist, soft, and modern aesthetic",
+      "category": "Knitwear",
+      "tags": [],
+      "images": [
+        "assets/picture/Cardigans & Sweaters/cadigans1_1.webp",
+        "assets/picture/Cardigans & Sweaters/cadigans1_2.webp"
+      ],
+      "quantity": 35
+    },
+    {
+      "slug": "cardigans-and-sweaters-fine-knit-cardigan-6",
+      "sku": "FS-0006",
+      "name": "Fine-Knit Cardigan",
+      "brand": "H&M",
+      "salePrice": "17.99",
+      "comparePrice": null,
+      "shortDescription": "A mouse-grey rib-knit cardigan featuring a crew neckline, front button closure, and a ribbed hem. Paired with a",
+      "description": "A mouse-grey rib-knit cardigan featuring a crew neckline, front button closure, and a ribbed hem. Paired with a matching knit sweater casually draped over the shoulders, it creates a youthful and stylish layered look.",
+      "category": "Knitwear",
+      "tags": [],
+      "images": [
+        "assets/picture/Cardigans & Sweaters/sweater1.webp",
+        "assets/picture/Cardigans & Sweaters/sweater1_1.webp",
+        "assets/picture/Cardigans & Sweaters/sweater1_2.webp"
+      ],
+      "quantity": 36
+    },
+    {
+      "slug": "cardigans-and-sweaters-layered-sweater-7",
+      "sku": "FS-0007",
+      "name": "Layered Sweater",
+      "brand": "H&M",
+      "salePrice": "52.99",
+      "comparePrice": null,
+      "shortDescription": "Oversized knit sweater featuring an asymmetrical lace-trim silk hem, designed with a modern layered aesthetic.",
+      "description": "Oversized knit sweater featuring an asymmetrical lace-trim silk hem, designed with a modern layered aesthetic.",
+      "category": "Knitwear",
+      "tags": [],
+      "images": [
+        "assets/picture/Cardigans & Sweaters/sweater2.webp",
+        "assets/picture/Cardigans & Sweaters/sweater2_1.webp",
+        "assets/picture/Cardigans & Sweaters/sweater2_2.webp"
+      ],
+      "quantity": 37
+    },
+    {
+      "slug": "cardigans-and-sweaters-short-sleeved-cardigan-8",
+      "sku": "FS-0008",
+      "name": "Short-Sleeved Cardigan",
+      "brand": "H&M",
+      "salePrice": "24.99",
+      "comparePrice": null,
+      "shortDescription": "Cream-colored short-sleeve knit cardigan, featuring a soft, elegant, and timeless classic style",
+      "description": "Cream-colored short-sleeve knit cardigan, featuring a soft, elegant, and timeless classic style",
+      "category": "Knitwear",
+      "tags": [],
+      "images": [
+        "assets/picture/Cardigans & Sweaters/sweater3.webp",
+        "assets/picture/Cardigans & Sweaters/sweater3_1.webp",
+        "assets/picture/Cardigans & Sweaters/sweater3_2.webp"
+      ],
+      "quantity": 38
+    },
+    {
+      "slug": "jeans-baggy-high-jeans-9",
+      "sku": "FS-0009",
+      "name": "Baggy High Jeans",
+      "brand": "H&M",
+      "salePrice": "31.35",
+      "comparePrice": null,
+      "shortDescription": "High-waisted baggy jeans featuring a wide-leg silhouette, offering comfort and a timeless vintage look. Perfect for casual and",
+      "description": "High-waisted baggy jeans featuring a wide-leg silhouette, offering comfort and a timeless vintage look. Perfect for casual and effortless everyday styling.",
+      "category": "Bottoms",
+      "tags": [],
+      "images": [
+        "assets/picture/Jeans/jeans1.webp",
+        "assets/picture/Jeans/jeans1_1.webp",
+        "assets/picture/Jeans/jeans1_2.webp"
+      ],
+      "quantity": 39
+    },
+    {
+      "slug": "jeans-wide-high-waist-jeans-10",
+      "sku": "FS-0010",
+      "name": "Wide High Waist Jeans",
+      "brand": "H&M",
+      "salePrice": "31.35",
+      "comparePrice": null,
+      "shortDescription": "Women's puddle-style baggy wide-leg jeans in a dark charcoal gray wash, featuring a high-rise waist and an extra-relaxed",
+      "description": "Women's puddle-style baggy wide-leg jeans in a dark charcoal gray wash, featuring a high-rise waist and an extra-relaxed silhouette. The long, draped hem creates a modern streetwear-inspired look with a casual, effortless feel.",
+      "category": "Bottoms",
+      "tags": [],
+      "images": [
+        "assets/picture/Jeans/jeans3.webp",
+        "assets/picture/Jeans/jeans3_1.webp",
+        "assets/picture/Jeans/jeans3_2.webp"
+      ],
+      "quantity": 40
+    },
+    {
+      "slug": "jeans-baggy-regular-waist-jeans-11",
+      "sku": "FS-0011",
+      "name": "Baggy Regular Waist Jeans",
+      "brand": "H&M",
+      "salePrice": "31.35",
+      "comparePrice": null,
+      "shortDescription": "Women's wide-leg straight-fit jeans in a classic medium-wash denim blue. Designed with a regular-rise waist and a relaxed",
+      "description": "Women's wide-leg straight-fit jeans in a classic medium-wash denim blue. Designed with a regular-rise waist and a relaxed silhouette, these jeans offer a timeless, versatile look that blends casual comfort with effortless everyday style.",
+      "category": "Bottoms",
+      "tags": [],
+      "images": [
+        "assets/picture/Jeans/jeans4.webp",
+        "assets/picture/Jeans/jeans4_1.webp",
+        "assets/picture/Jeans/jeans4_2.webp"
+      ],
+      "quantity": 41
+    },
+    {
+      "slug": "jeans-baggy-regular-waist-jeans-12",
+      "sku": "FS-0012",
+      "name": "Baggy Regular Waist Jeans",
+      "brand": "H&M",
+      "salePrice": "31.35",
+      "comparePrice": null,
+      "shortDescription": "Designed with a regular-rise waist and a wide-leg silhouette, these smoky gray jeans offer effortless comfort and a",
+      "description": "Designed with a regular-rise waist and a wide-leg silhouette, these smoky gray jeans offer effortless comfort and a laid-back look. A versatile wardrobe staple for casual, street-style, and everyday outfits.",
+      "category": "Bottoms",
+      "tags": [],
+      "images": [
+        "assets/picture/Jeans/jeans1.webp"
+      ],
+      "quantity": 42
+    },
+    {
+      "slug": "new-slim-fit-wrap-knot-poplin-shirt-13",
+      "sku": "FS-0013",
+      "name": "Slim Fit Wrap Knot Poplin Shirt",
+      "brand": "Tommy Hilfiger",
+      "salePrice": "103.20",
+      "comparePrice": null,
+      "shortDescription": "This long-sleeve shirt is crafted from premium poplin fabric made with organic cotton. It features a slim-fit silhouette",
+      "description": "This long-sleeve shirt is crafted from premium poplin fabric made with organic cotton. It features a slim-fit silhouette and a flattering wrap-style V-neckline that creates a streamlined look. A wide side-tie belt at the waist adds a fashionable touch, enhancing the figure while delivering an elegant and sophisticated appearance.",
+      "category": "Accessories",
+      "tags": [
+        "New"
+      ],
+      "images": [
+        "assets/picture/New/new1_1.webp",
+        "assets/picture/New/new1.webp"
+      ],
+      "quantity": 43
+    },
+    {
+      "slug": "new-regular-fit-printed-t-shirt-14",
+      "sku": "FS-0014",
+      "name": "Regular Fit Printed T-Shirt",
+      "brand": "Tom Tailor",
+      "salePrice": "15.99",
+      "comparePrice": "25.99",
+      "shortDescription": "This classic men's crew-neck T-shirt is made from 100% soft cotton, offering excellent breathability and all-day comfort while",
+      "description": "This classic men's crew-neck T-shirt is made from 100% soft cotton, offering excellent breathability and all-day comfort while remaining gentle on the skin. Designed in a regular-fit silhouette, it provides a comfortable and versatile look suitable for everyday wear. The front features a striking rectangular digital print depicting a close-up view from the deck of a sailing voyage, complemented by the stylized \"Heritage Sailing\" lettering beneath. The design creates a relaxed, nautical-inspired aesthetic with a distinctive maritime sportswear character.",
+      "category": "Accessories",
+      "tags": [
+        "New"
+      ],
+      "images": [
+        "assets/picture/New/new2_1.webp",
+        "assets/picture/New/new2_2.webp",
+        "assets/picture/New/new2.webp"
+      ],
+      "quantity": 44
+    },
+    {
+      "slug": "new-relaxed-fit-printed-jersey-t-shirt-sailboat-blueprint-edition-15",
+      "sku": "FS-0015",
+      "name": "Relaxed Fit Printed Jersey T-Shirt (Sailboat Blueprint Edition)",
+      "brand": "LC Waikiki",
+      "salePrice": "9.99",
+      "comparePrice": "17.99",
+      "shortDescription": "This men's crew-neck T-shirt comes in a stylish Dark Navy color and is crafted from soft, breathable cotton",
+      "description": "This men's crew-neck T-shirt comes in a stylish Dark Navy color and is crafted from soft, breathable cotton jersey fabric with a comfortable stretch. Designed with a relaxed/oversized fit, it offers a casual and laid-back silhouette ideal for everyday wear. The standout feature is a crisp white blueprint-style graphic print on the front, showcasing detailed technical sketches and multiple perspectives of a sailboat. This artistic design adds a distinctive nautical-inspired touch while highlighting creativity, individuality, and modern casual style.",
+      "category": "Accessories",
+      "tags": [
+        "New"
+      ],
+      "images": [
+        "assets/picture/New/new3_1.webp",
+        "assets/picture/New/new3_2.webp",
+        "assets/picture/New/new3.webp"
+      ],
+      "quantity": 45
+    },
+    {
+      "slug": "sale-vibetina-o-neck-short-dress-misty-rose-edition-16",
+      "sku": "FS-0016",
+      "name": "Vibetina O-Neck Short Dress (Misty Rose Edition)",
+      "brand": "VILA",
+      "salePrice": "34.95",
+      "comparePrice": "50.00",
+      "shortDescription": "This short skater dress in a soft Misty Rose shade offers a sweet and elegant look, making it",
+      "description": "This short skater dress in a soft Misty Rose shade offers a sweet and elegant look, making it an ideal choice for parties, celebrations, and casual special occasions. The design features a beautifully crafted floral lace bodice across the upper section, adding a touch of sophistication and femininity. It is complemented by a classic round neckline and delicate sleeveless styling for a graceful appearance. The high-waisted silhouette enhances the figure and flows into a soft A-line skirt, creating a light and airy movement with every step.",
+      "category": "Accessories",
+      "tags": [
+        "Sale"
+      ],
+      "images": [
+        "assets/picture/Sale/sale1_1.webp",
+        "assets/picture/Sale/sale1.webp"
+      ],
+      "quantity": 46
+    },
+    {
+      "slug": "sale-long-sleeve-high-slit-maxi-dress-17",
+      "sku": "FS-0017",
+      "name": "Long Sleeve High-Slit Maxi Dress",
+      "brand": "Monki / PIECES",
+      "salePrice": "29.99",
+      "comparePrice": "39.99",
+      "shortDescription": "This long-sleeve maxi dress features a relaxed silhouette with a high side slit, combining minimalist style with everyday",
+      "description": "This long-sleeve maxi dress features a relaxed silhouette with a high side slit, combining minimalist style with everyday comfort. Crafted from soft stretch jersey fabric with a subtle space-dye texture, it offers a modern and versatile look suitable for various casual occasions. The streamlined design enhances its contemporary appeal, while the side slit adds ease of movement and a touch of effortless elegance. Perfect for those who appreciate a balance of simplicity, comfort, and understated fashion.",
+      "category": "Tops",
+      "tags": [
+        "Sale"
+      ],
+      "images": [
+        "assets/picture/Sale/sale2_1.webp",
+        "assets/picture/Sale/sale2_2.webp",
+        "assets/picture/Sale/sale2.webp"
+      ],
+      "quantity": 47
+    },
+    {
+      "slug": "sale-long-sleeve-high-slit-maxi-dress-18",
+      "sku": "FS-0018",
+      "name": "Long Sleeve High-Slit Maxi Dress",
+      "brand": "Monki",
+      "salePrice": "24.99",
+      "comparePrice": "39.99",
+      "shortDescription": "This elegant and minimalist maxi column dress comes in a sophisticated Light Grey Melange shade, offering a timeless",
+      "description": "This elegant and minimalist maxi column dress comes in a sophisticated Light Grey Melange shade, offering a timeless and versatile look. The design features a refined crew neckline and gently fitted long sleeves, creating a sleek and flattering silhouette. Crafted from soft, stretchy jersey knit fabric, it provides exceptional comfort for all-day wear. The standout details include a high side slit that adds a touch of femininity and ease of movement, along with practical side pockets for added convenience. Perfect for casual outings, the dress can be effortlessly paired with sneakers to create a youthful, modern, and stylish appearance.",
+      "category": "Tops",
+      "tags": [
+        "Sale"
+      ],
+      "images": [
+        "assets/picture/Sale/sale3_1.webp",
+        "assets/picture/Sale/sale3_2.webp",
+        "assets/picture/Sale/sale3.webp"
+      ],
+      "quantity": 48
+    },
+    {
+      "slug": "accesories-dior-core-ring-19",
+      "sku": "FS-0019",
+      "name": "Dior Core Ring",
+      "brand": "Dior",
+      "salePrice": "440.60",
+      "comparePrice": null,
+      "shortDescription": "Elegant Dior Core Ring crafted in gold-finish metal, embellished with sparkling crystals and Rose Tendre lacquer for a",
+      "description": "Elegant Dior Core Ring crafted in gold-finish metal, embellished with sparkling crystals and Rose Tendre lacquer for a refined and feminine look.",
+      "category": "Tops",
+      "tags": [],
+      "images": [
+        "assets/picture/accesories/accesories1.webp",
+        "assets/picture/accesories/accesories1_1.webp",
+        "assets/picture/accesories/accesories1_2.webp"
+      ],
+      "quantity": 49
+    },
+    {
+      "slug": "accesories-dior-darling-ring-20",
+      "sku": "FS-0020",
+      "name": "Dior Darling Ring",
+      "brand": "Dior",
+      "salePrice": "375.50",
+      "comparePrice": null,
+      "shortDescription": "A contemporary take on the hallmark bow, the Dior Darling ring expresses Jonathan Anderson's creative vision in a",
+      "description": "A contemporary take on the hallmark bow, the Dior Darling ring expresses Jonathan Anderson's creative vision in a refined, sculptural design. Entirely crafted in gold-finish metal, it is delicately adorned with an engraved Dior signature.",
+      "category": "Tops",
+      "tags": [],
+      "images": [
+        "assets/picture/accesories/accesories2.webp",
+        "assets/picture/accesories/accesories2_1.webp",
+        "assets/picture/accesories/accesories2_2.webp"
+      ],
+      "quantity": 50
+    },
+    {
+      "slug": "accesories-dior-night-code-ring-21",
+      "sku": "FS-0021",
+      "name": "Dior Night Code Ring",
+      "brand": "Dior",
+      "salePrice": "421.50",
+      "comparePrice": null,
+      "shortDescription": "The Dior Night Code ring presents a modern aesthetic recalling House heritage. Pavé-set with crystals, the gold-finish metal",
+      "description": "The Dior Night Code ring presents a modern aesthetic recalling House heritage. Pavé-set with crystals, the gold-finish metal design features the Dior signature and delicate bows on black lacquer.",
+      "category": "Tops",
+      "tags": [],
+      "images": [
+        "assets/picture/accesories/accesories3.webp",
+        "assets/picture/accesories/accesories3_1.webp",
+        "assets/picture/accesories/accesories3_2.webp"
+      ],
+      "quantity": 51
+    },
+    {
+      "slug": "accesories-dioriviera-brush-and-bloom-earrings-22",
+      "sku": "FS-0022",
+      "name": "Dioriviera Brush & Bloom Earrings",
+      "brand": "Dior",
+      "salePrice": "593.90",
+      "comparePrice": null,
+      "shortDescription": "Part of the Dioriviera capsule, the Brush & Bloom earrings pay an elegant homage to the ephemeral beauty",
+      "description": "Part of the Dioriviera capsule, the Brush & Bloom earrings pay an elegant homage to the ephemeral beauty of flowers in bloom, while taking inspiration from a drawing originally sketched by Mr. Dior.",
+      "category": "Tops",
+      "tags": [],
+      "images": [
+        "assets/picture/accesories/accesories4.webp",
+        "assets/picture/accesories/accesories4_1.webp",
+        "assets/picture/accesories/accesories4_2.webp"
+      ],
+      "quantity": 52
+    },
+    {
+      "slug": "catalog1-ribbed-knit-tank-top-ecru-edition-23",
+      "sku": "FS-0023",
+      "name": "Ribbed Knit Tank Top (Ecru Edition)",
+      "brand": "Mango",
+      "salePrice": "19.00",
+      "comparePrice": "31.00",
+      "shortDescription": "This ribbed knit tank top in a soft Ecru/Off-White shade features a flattering slim-fit silhouette and classic round",
+      "description": "This ribbed knit tank top in a soft Ecru/Off-White shade features a flattering slim-fit silhouette and classic round neckline. Crafted from a lightweight, breathable cotton-blend fabric with gentle stretch, it offers all-day comfort and versatility. Perfect for pairing with cargo pants, a woven bucket hat, and layered necklaces for an effortless summer look.",
+      "category": "Tops",
+      "tags": [],
+      "images": [
+        "assets/picture/catalog1/blouse1.webp",
+        "assets/picture/catalog1/blouse2.webp",
+        "assets/picture/catalog1/blouse.webp"
+      ],
+      "quantity": 53
+    },
+    {
+      "slug": "catalog1-oversized-fisherman-rib-crew-neck-jumper-24",
+      "sku": "FS-0024",
+      "name": "Oversized Fisherman Rib Crew-Neck Jumper",
+      "brand": "H&M",
+      "salePrice": "25.00",
+      "comparePrice": "43.00",
+      "shortDescription": "This oversized pullover jumper features a thick fisherman-rib knit texture in a versatile navy blue shade. Its relaxed",
+      "description": "This oversized pullover jumper features a thick fisherman-rib knit texture in a versatile navy blue shade. Its relaxed silhouette is enhanced by deeply dropped shoulders, creating a laid-back and contemporary look. The voluminous sleeves with ribbed cuffs add a youthful touch while helping to retain warmth and comfort. Crafted for both style and practicality, this sweater is perfect for layering and can be effortlessly incorporated into casual streetwear outfits during cooler seasons.",
+      "category": "Tops",
+      "tags": [],
+      "images": [
+        "assets/picture/catalog1/pullover1.webp",
+        "assets/picture/catalog1/pullover2.webp",
+        "assets/picture/catalog1/pullover.webp"
+      ],
+      "quantity": 54
+    },
+    {
+      "slug": "catalog1-plaid-perfect-flannel-button-front-shirt-windowpane-edition-25",
+      "sku": "FS-0025",
+      "name": "Plaid Perfect Flannel Button-Front Shirt (Windowpane Edition)",
+      "brand": "Fresh Brand",
+      "salePrice": "17.00",
+      "comparePrice": "37.00",
+      "shortDescription": "This long-sleeve button-front shirt features a classic black-and-white windowpane plaid pattern. Made from soft flannel or a lightweight",
+      "description": "This long-sleeve button-front shirt features a classic black-and-white windowpane plaid pattern. Made from soft flannel or a lightweight rayon blend, it offers a comfortable fit with a smooth, breathable feel. Designed with a point collar and two angled flap chest pockets, it pairs effortlessly with jeans for a casual yet polished everyday look.",
+      "category": "Tops",
+      "tags": [],
+      "images": [
+        "assets/picture/catalog1/shirt1.webp",
+        "assets/picture/catalog1/shirt2.webp",
+        "assets/picture/catalog1/shirt.webp"
+      ],
+      "quantity": 55
+    },
+    {
+      "slug": "catalog1-mango-print-t-shirt-26",
+      "sku": "FS-0026",
+      "name": "Mango Print T-Shirt",
+      "brand": "Mango",
+      "salePrice": "20.00",
+      "comparePrice": null,
+      "shortDescription": "Short-sleeve crew-neck T-shirt in light pink with thin black horizontal stripe patterns, offering a youthful and elegant appearance.",
+      "description": "Short-sleeve crew-neck T-shirt in light pink with thin black horizontal stripe patterns, offering a youthful and elegant appearance.",
+      "category": "Tops",
+      "tags": [],
+      "images": [
+        "assets/picture/catalog1/t_shirt1.webp",
+        "assets/picture/catalog1/t_shirt2.webp",
+        "assets/picture/catalog1/t_shirt.webp"
+      ],
+      "quantity": 56
+    },
+    {
+      "slug": "dresses-smocked-strappy-dress-27",
+      "sku": "FS-0027",
+      "name": "Smocked Strappy Dress",
+      "brand": "H&M",
+      "salePrice": "24.99",
+      "comparePrice": null,
+      "shortDescription": "Calf-length dress in crinkled jersey with a smocked bodice and flared skirt. Adjustable, extra-narrow shoulder straps, square neckline,",
+      "description": "Calf-length dress in crinkled jersey with a smocked bodice and flared skirt. Adjustable, extra-narrow shoulder straps, square neckline, and a gathered seam at waist.",
+      "category": "Dresses",
+      "tags": [],
+      "images": [
+        "assets/picture/dresses/dresses1.webp",
+        "assets/picture/dresses/dresses1_1.webp",
+        "assets/picture/dresses/dresses1_2.webp"
+      ],
+      "quantity": 57
+    },
+    {
+      "slug": "dresses-smocked-bodice-strappy-dress-28",
+      "sku": "FS-0028",
+      "name": "Smocked-Bodice Strappy Dress",
+      "brand": "H&M",
+      "salePrice": "39.99",
+      "comparePrice": null,
+      "shortDescription": "Calf-length dress in a woven viscose blend with a smocked bodice and flared skirt. Narrow, adjustable shoulder straps,",
+      "description": "Calf-length dress in a woven viscose blend with a smocked bodice and flared skirt. Narrow, adjustable shoulder straps, straight neckline with narrow ruffle trim, and gathers at waist. Unlined.",
+      "category": "Dresses",
+      "tags": [],
+      "images": [
+        "assets/picture/dresses/dresses2.webp",
+        "assets/picture/dresses/dresses2_1.webp",
+        "assets/picture/dresses/dresses2_2.webp"
+      ],
+      "quantity": 58
+    },
+    {
+      "slug": "dresses-ruffle-trimmed-smocked-bodice-dress-29",
+      "sku": "FS-0029",
+      "name": "Ruffle-Trimmed Smocked-Bodice Dress",
+      "brand": "H&M",
+      "salePrice": "39.99",
+      "comparePrice": null,
+      "shortDescription": "Calf-length dress in a woven viscose blend with a smocked, ruffle-trimmed bodice and a flared skirt. Ruffle-trimmed elasticized",
+      "description": "Calf-length dress in a woven viscose blend with a smocked, ruffle-trimmed bodice and a flared skirt. Ruffle-trimmed elasticized shoulder straps, straight-cut upper edge with extra-narrow drawstring, and a gathered seam at waist. Gathered, ruffle-trimmed tier above hem.",
+      "category": "Dresses",
+      "tags": [],
+      "images": [
+        "assets/picture/dresses/dresses3.webp",
+        "assets/picture/dresses/dresses3_1.webp",
+        "assets/picture/dresses/dresses3_2.webp"
+      ],
+      "quantity": 59
+    },
+    {
+      "slug": "dresses-cotton-dress-with-tie-top-shoulder-straps-30",
+      "sku": "FS-0030",
+      "name": "Cotton Dress with Tie-Top Shoulder Straps",
+      "brand": "H&M",
+      "salePrice": "29.99",
+      "comparePrice": null,
+      "shortDescription": "Calf-length dress in woven cotton with a fitted bodice and gently flared skirt. Tie-top shoulder straps, lace-trimmed straight",
+      "description": "Calf-length dress in woven cotton with a fitted bodice and gently flared skirt. Tie-top shoulder straps, lace-trimmed straight neckline, lace insets at waist, and a gathered seam at waist. Smocking at back. Unlined.",
+      "category": "Dresses",
+      "tags": [],
+      "images": [
+        "assets/picture/dresses/dresses4.webp",
+        "assets/picture/dresses/dresses4_1.webp",
+        "assets/picture/dresses/dresses4_2.webp"
+      ],
+      "quantity": 30
+    },
+    {
+      "slug": "kids-accesories-girls-unicorn-backpack-31",
+      "sku": "FS-0031",
+      "name": "Girls' Unicorn Backpack",
+      "brand": "Rabity",
+      "salePrice": "17.20",
+      "comparePrice": null,
+      "shortDescription": "A charming Unicorn-themed backpack for girls, featuring a cute and playful design. Perfect for preschool, outings, and everyday",
+      "description": "A charming Unicorn-themed backpack for girls, featuring a cute and playful design. Perfect for preschool, outings, and everyday adventures, it adds a fun and magical touch to any look.",
+      "category": "Kids",
+      "tags": [],
+      "images": [
+        "assets/picture/kids/accesories/k_accesories4.webp",
+        "assets/picture/kids/accesories/k_accesories4_1.webp",
+        "assets/picture/kids/accesories/k_accesories4_2.webp"
+      ],
+      "quantity": 31
+    },
+    {
+      "slug": "kids-accesories-kids-water-bottle-with-strap-32",
+      "sku": "FS-0032",
+      "name": "Kids' Water Bottle with Strap",
+      "brand": "Rabity",
+      "salePrice": "9.50",
+      "comparePrice": null,
+      "shortDescription": "A cute and practical water bottle for boys and girls, featuring a built-in straw and adjustable carrying strap.",
+      "description": "A cute and practical water bottle for boys and girls, featuring a built-in straw and adjustable carrying strap. Perfect for school, outings, and outdoor adventures.",
+      "category": "Kids",
+      "tags": [],
+      "images": [
+        "assets/picture/kids/accesories/k_accesories1.webp",
+        "assets/picture/kids/accesories/k_accesories1_1.webp",
+        "assets/picture/kids/accesories/k_accesories1_2.webp"
+      ],
+      "quantity": 32
+    },
+    {
+      "slug": "kids-accesories-kids-round-sunglasses-33",
+      "sku": "FS-0033",
+      "name": "Kids' Round Sunglasses",
+      "brand": "Rabity",
+      "salePrice": "4.90",
+      "comparePrice": null,
+      "shortDescription": "Stylish round-frame sunglasses for boys and girls, designed to help protect young eyes from the sun while adding",
+      "description": "Stylish round-frame sunglasses for boys and girls, designed to help protect young eyes from the sun while adding a cute and fashionable touch to any outfit.",
+      "category": "Kids",
+      "tags": [],
+      "images": [
+        "assets/picture/kids/accesories/k_accesories2.webp",
+        "assets/picture/kids/accesories/k_accesories2_1.webp",
+        "assets/picture/kids/accesories/k_accesories2_2.webp"
+      ],
+      "quantity": 33
+    },
+    {
+      "slug": "kids-accesories-girls-crossbody-bag-34",
+      "sku": "FS-0034",
+      "name": "Girls' Crossbody Bag",
+      "brand": "Rabity",
+      "salePrice": "14.50",
+      "comparePrice": null,
+      "shortDescription": "A charming pink crossbody bag for girls, featuring a sweet and elegant design. Perfect for outings, parties, and",
+      "description": "A charming pink crossbody bag for girls, featuring a sweet and elegant design. Perfect for outings, parties, and everyday adventures, it adds a stylish finishing touch to any outfit.",
+      "category": "Kids",
+      "tags": [],
+      "images": [
+        "assets/picture/kids/accesories/k_accesories3.webp",
+        "assets/picture/kids/accesories/k_accesories3_1.webp",
+        "assets/picture/kids/accesories/k_accesories3_2.webp"
+      ],
+      "quantity": 34
+    },
+    {
+      "slug": "kids-clothes-sleeveless-chiffon-dress-for-girls-35",
+      "sku": "FS-0035",
+      "name": "Sleeveless Chiffon Dress for Girls",
+      "brand": "Rabity",
+      "salePrice": "7.60",
+      "comparePrice": null,
+      "shortDescription": "A charming sleeveless chiffon dress designed for girls, featuring a sweet princess-inspired style. Perfect for parties, special occasions,",
+      "description": "A charming sleeveless chiffon dress designed for girls, featuring a sweet princess-inspired style. Perfect for parties, special occasions, or casual outings, it offers an elegant and playful look.",
+      "category": "Kids",
+      "tags": [],
+      "images": [
+        "assets/picture/kids/clothes/kclothes1.webp",
+        "assets/picture/kids/clothes/kclothes1_1.webp",
+        "assets/picture/kids/clothes/kclothes1_2.webp"
+      ],
+      "quantity": 35
+    },
+    {
+      "slug": "kids-clothes-short-sleeve-dress-for-girls-36",
+      "sku": "FS-0036",
+      "name": "Short-Sleeve Dress for Girls",
+      "brand": "Rabity",
+      "salePrice": "15.30",
+      "comparePrice": null,
+      "shortDescription": "A charming sky-blue short-sleeve dress for girls, featuring a tiered princess-style silhouette. Designed for comfort and elegance, it",
+      "description": "A charming sky-blue short-sleeve dress for girls, featuring a tiered princess-style silhouette. Designed for comfort and elegance, it offers a sweet and breezy look perfect for summer days.",
+      "category": "Kids",
+      "tags": [],
+      "images": [
+        "assets/picture/kids/clothes/kclothes2.webp",
+        "assets/picture/kids/clothes/kclothes2_1.webp",
+        "assets/picture/kids/clothes/kclothes2_2.webp"
+      ],
+      "quantity": 36
+    },
+    {
+      "slug": "kids-clothes-short-sleeve-cotton-dress-for-girls-37",
+      "sku": "FS-0037",
+      "name": "Short-Sleeve Cotton Dress for Girls",
+      "brand": "Rabity",
+      "salePrice": "10.30",
+      "comparePrice": null,
+      "shortDescription": "A cream-colored short-sleeve dress adorned with delicate pink floral prints, featuring a sweet vintage-inspired design. Soft and charming,",
+      "description": "A cream-colored short-sleeve dress adorned with delicate pink floral prints, featuring a sweet vintage-inspired design. Soft and charming, it creates a dreamy and elegant look for young girls.",
+      "category": "Kids",
+      "tags": [],
+      "images": [
+        "assets/picture/kids/clothes/kclothes3.webp",
+        "assets/picture/kids/clothes/kclothes3_1.webp",
+        "assets/picture/kids/clothes/kclothes3_2.webp"
+      ],
+      "quantity": 37
+    },
+    {
+      "slug": "kids-clothes-girls-pinafore-dress-set-38",
+      "sku": "FS-0038",
+      "name": "Girls' Pinafore Dress Set",
+      "brand": "Rabity",
+      "salePrice": "13.40",
+      "comparePrice": null,
+      "shortDescription": "A beige khaki pinafore dress paired with a pink striped ribbed T-shirt, creating a cute and playful look.",
+      "description": "A beige khaki pinafore dress paired with a pink striped ribbed T-shirt, creating a cute and playful look. Designed for comfort and practicality, it's perfect for school, outings, and everyday wear.",
+      "category": "Kids",
+      "tags": [],
+      "images": [
+        "assets/picture/kids/clothes/kclothes4.webp",
+        "assets/picture/kids/clothes/kclothes4_1.webp"
+      ],
+      "quantity": 38
+    },
+    {
+      "slug": "kids-shoes-toddler-walking-shoes-39",
+      "sku": "FS-0039",
+      "name": "Toddler Walking Shoes",
+      "brand": "Rabity",
+      "salePrice": "15.30",
+      "comparePrice": null,
+      "shortDescription": "Lightweight walking shoes for boys and girls, featuring a soft cushioned sole, convenient hook-and-loop straps, and a breathable",
+      "description": "Lightweight walking shoes for boys and girls, featuring a soft cushioned sole, convenient hook-and-loop straps, and a breathable upper. Designed to provide comfort and support for little ones taking their first steps.",
+      "category": "Kids",
+      "tags": [],
+      "images": [
+        "assets/picture/kids/shoes/kshoes1.webp",
+        "assets/picture/kids/shoes/kshoes1_1.webp",
+        "assets/picture/kids/shoes/kshoes1_2.webp"
+      ],
+      "quantity": 39
+    },
+    {
+      "slug": "kids-shoes-toddler-walking-shoes-40",
+      "sku": "FS-0040",
+      "name": "Toddler Walking Shoes",
+      "brand": "Rabity",
+      "salePrice": "15.30",
+      "comparePrice": null,
+      "shortDescription": "Lightweight first-walker shoes for boys and girls, featuring a cushioned sole, breathable upper, and convenient hook-and-loop closure. Designed",
+      "description": "Lightweight first-walker shoes for boys and girls, featuring a cushioned sole, breathable upper, and convenient hook-and-loop closure. Designed to provide comfort, flexibility, and support for everyday wear.",
+      "category": "Kids",
+      "tags": [],
+      "images": [
+        "assets/picture/kids/shoes/kshoes2.webp",
+        "assets/picture/kids/shoes/kshoes2_1.webp",
+        "assets/picture/kids/shoes/kshoes2_2.webp"
+      ],
+      "quantity": 40
+    },
+    {
+      "slug": "kids-shoes-girls-ballet-flats-41",
+      "sku": "FS-0041",
+      "name": "Girls' Ballet Flats",
+      "brand": "Rabity",
+      "salePrice": "18.40",
+      "comparePrice": null,
+      "shortDescription": "Dark brown ballet flats for girls featuring a classic, ladylike design. Elegant and charming, they are perfect for",
+      "description": "Dark brown ballet flats for girls featuring a classic, ladylike design. Elegant and charming, they are perfect for school, outings, and special occasions.",
+      "category": "Kids",
+      "tags": [],
+      "images": [
+        "assets/picture/kids/shoes/kshoes3.webp",
+        "assets/picture/kids/shoes/kshoes3_1.webp",
+        "assets/picture/kids/shoes/kshoes3_2.webp"
+      ],
+      "quantity": 41
+    },
+    {
+      "slug": "kids-shoes-girls-embroidered-ballet-flats-42",
+      "sku": "FS-0042",
+      "name": "Girls' Embroidered Ballet Flats",
+      "brand": "Rabity",
+      "salePrice": "18.40",
+      "comparePrice": null,
+      "shortDescription": "Cream-colored ballet flats featuring delicate floral embroidery and a graceful vintage-inspired design. Elegant and charming, they are perfect",
+      "description": "Cream-colored ballet flats featuring delicate floral embroidery and a graceful vintage-inspired design. Elegant and charming, they are perfect for school, outings, and special occasions.",
+      "category": "Kids",
+      "tags": [],
+      "images": [
+        "assets/picture/kids/shoes/kshoes4.webp",
+        "assets/picture/kids/shoes/kshoes4_1.webp",
+        "assets/picture/kids/shoes/kshoes4_2.webp"
+      ],
+      "quantity": 42
+    },
+    {
+      "slug": "kids-shoes-boys-sports-sandals-43",
+      "sku": "FS-0043",
+      "name": "Boys' Sports Sandals",
+      "brand": "Rabity",
+      "salePrice": "14.10",
+      "comparePrice": null,
+      "shortDescription": "Navy blue sports sandals for boys featuring a breathable design and supportive construction. Comfortable and durable, they are",
+      "description": "Navy blue sports sandals for boys featuring a breathable design and supportive construction. Comfortable and durable, they are perfect for active summer adventures and everyday play.",
+      "category": "Kids",
+      "tags": [],
+      "images": [
+        "assets/picture/kids/shoes/kshoes5.webp",
+        "assets/picture/kids/shoes/kshoes5_1.webp",
+        "assets/picture/kids/shoes/kshoes5_2.webp"
+      ],
+      "quantity": 43
+    },
+    {
+      "slug": "kids-shoes-boys-closed-toe-sports-sandals-44",
+      "sku": "FS-0044",
+      "name": "Boys' Closed-Toe Sports Sandals",
+      "brand": "Rabity",
+      "salePrice": "14.90",
+      "comparePrice": null,
+      "shortDescription": "Navy and orange closed-toe sports sandals for boys, featuring a sporty cage-style design that provides enhanced protection and",
+      "description": "Navy and orange closed-toe sports sandals for boys, featuring a sporty cage-style design that provides enhanced protection and support for active outdoor play.",
+      "category": "Kids",
+      "tags": [],
+      "images": [
+        "assets/picture/kids/shoes/kshoes6.webp",
+        "assets/picture/kids/shoes/kshoes6_1.webp",
+        "assets/picture/kids/shoes/kshoes6_2.webp"
+      ],
+      "quantity": 44
+    },
+    {
+      "slug": "knitwear-v-neck-knit-cardigan-45",
+      "sku": "FS-0045",
+      "name": "V-Neck Knit Cardigan",
+      "brand": "UNIQLO",
+      "salePrice": "22.62",
+      "comparePrice": null,
+      "shortDescription": "Dark brown crochet-knit cardigan with a cropped silhouette, V-neckline, and front button closure. Features intricate openwork knit patterns,",
+      "description": "Dark brown crochet-knit cardigan with a cropped silhouette, V-neckline, and front button closure. Features intricate openwork knit patterns, long sleeves, and a lightweight, feminine design.",
+      "category": "Knitwear",
+      "tags": [],
+      "images": [
+        "assets/picture/knitwear/knitwear1.webp",
+        "assets/picture/knitwear/knitwear1_2.webp"
+      ],
+      "quantity": 45
+    },
+    {
+      "slug": "knitwear-long-lurex-crochet-dress-46",
+      "sku": "FS-0046",
+      "name": "Long lurex crochet dress",
+      "brand": "Mango",
+      "salePrice": "57.65",
+      "comparePrice": null,
+      "shortDescription": "Crochet-knit fabric blended with subtle shimmering lurex yarn, featuring an airy open-weave texture and a naturally draped silhouette.",
+      "description": "Crochet-knit fabric blended with subtle shimmering lurex yarn, featuring an airy open-weave texture and a naturally draped silhouette. Its relaxed, breezy aesthetic makes it an ideal choice for beachwear or outdoor events and parties.",
+      "category": "Knitwear",
+      "tags": [],
+      "images": [
+        "assets/picture/knitwear/knitwear2.webp",
+        "assets/picture/knitwear/knitwear2_1.webp",
+        "assets/picture/knitwear/knitwear2_2.webp"
+      ],
+      "quantity": 46
+    },
+    {
+      "slug": "knitwear-round-neck-knitted-cape-47",
+      "sku": "FS-0047",
+      "name": "Round neck knitted cape",
+      "brand": "Mango",
+      "salePrice": "49.99",
+      "comparePrice": null,
+      "shortDescription": "Knit fabric that is soft and highly stretchable, with a smooth drape that creates a light, flowing silhouette",
+      "description": "Knit fabric that is soft and highly stretchable, with a smooth drape that creates a light, flowing silhouette while still maintaining an elegant and sophisticated look.",
+      "category": "Knitwear",
+      "tags": [],
+      "images": [
+        "assets/picture/knitwear/knitwear3.webp",
+        "assets/picture/knitwear/knitwear3_1.webp",
+        "assets/picture/knitwear/knitwear3_2.webp"
+      ],
+      "quantity": 47
+    },
+    {
+      "slug": "knitwear-ribbed-knit-cardigan-48",
+      "sku": "FS-0048",
+      "name": "Ribbed knit cardigan",
+      "brand": "Mango",
+      "salePrice": "87.00",
+      "comparePrice": null,
+      "shortDescription": "Premium wool-blend fabric with a thick, substantial knit texture, featuring a soft and smooth surface, excellent warmth retention,",
+      "description": "Premium wool-blend fabric with a thick, substantial knit texture, featuring a soft and smooth surface, excellent warmth retention, and the ability to maintain its shape well.",
+      "category": "Knitwear",
+      "tags": [],
+      "images": [
+        "assets/picture/knitwear/knitwear4.webp"
+      ],
+      "quantity": 48
+    },
+    {
+      "slug": "men-accesories-denim-crossbody-bag-49",
+      "sku": "FS-0049",
+      "name": "Denim Crossbody Bag",
+      "brand": "H&M",
+      "salePrice": "39.99",
+      "comparePrice": null,
+      "shortDescription": "Small crossbody bag in cotton denim. Adjustable shoulder strap, zipper at top, two outer compartments, and an inner",
+      "description": "Small crossbody bag in cotton denim. Adjustable shoulder strap, zipper at top, two outer compartments, and an inner compartment.",
+      "category": "Men",
+      "tags": [],
+      "images": [
+        "assets/picture/men/accesories/accesories1.webp",
+        "assets/picture/men/accesories/accesories1_1.webp",
+        "assets/picture/men/accesories/accesories1_2.webp"
+      ],
+      "quantity": 49
+    },
+    {
+      "slug": "men-accesories-crossbody-bag-50",
+      "sku": "FS-0050",
+      "name": "Crossbody Bag",
+      "brand": "H&M",
+      "salePrice": "44.99",
+      "comparePrice": null,
+      "shortDescription": "Crossbody bag in woven fabric. Adjustable shoulder strap with metal slider buckle, zipper at top, and an outer",
+      "description": "Crossbody bag in woven fabric. Adjustable shoulder strap with metal slider buckle, zipper at top, and an outer compartment with flap with a metal clip buckle. One open inner compartment. Lined.",
+      "category": "Men",
+      "tags": [],
+      "images": [
+        "assets/picture/men/accesories/accesories2.webp",
+        "assets/picture/men/accesories/accesories2_1.webp"
+      ],
+      "quantity": 50
+    },
+    {
+      "slug": "men-accesories-crossbody-bag-51",
+      "sku": "FS-0051",
+      "name": "Crossbody Bag",
+      "brand": "H&M",
+      "salePrice": "29.99",
+      "comparePrice": null,
+      "shortDescription": "Crossbody bag in durable woven fabric. Handle at top and an adjustable shoulder strap for versatile carrying. Foldover",
+      "description": "Crossbody bag in durable woven fabric. Handle at top and an adjustable shoulder strap for versatile carrying. Foldover flap secured with a snap lock, an outer compartment with zipper, and an open inner compartment.",
+      "category": "Men",
+      "tags": [],
+      "images": [
+        "assets/picture/men/accesories/accesories3.webp",
+        "assets/picture/men/accesories/accesories3_1.webp",
+        "assets/picture/men/accesories/accesories3_2.webp"
+      ],
+      "quantity": 51
+    },
+    {
+      "slug": "men-accesories-padded-crossbody-bag-52",
+      "sku": "FS-0052",
+      "name": "Padded Crossbody Bag",
+      "brand": "H&M",
+      "salePrice": "39.99",
+      "comparePrice": null,
+      "shortDescription": "Padded crossbody bag in woven fabric. Adjustable shoulder strap with slider buckle, zipper at top, two outer compartments",
+      "description": "Padded crossbody bag in woven fabric. Adjustable shoulder strap with slider buckle, zipper at top, two outer compartments with zipper, and an inner compartment with zipper for essentials.",
+      "category": "Men",
+      "tags": [],
+      "images": [
+        "assets/picture/men/accesories/accesories4.webp",
+        "assets/picture/men/accesories/accesories4_1.webp",
+        "assets/picture/men/accesories/accesories4_2.webp"
+      ],
+      "quantity": 52
+    },
+    {
+      "slug": "men-clothes-regular-fit-linen-blend-shorts-53",
+      "sku": "FS-0053",
+      "name": "Regular-Fit Linen-Blend Shorts",
+      "brand": "H&M",
+      "salePrice": "29.99",
+      "comparePrice": null,
+      "shortDescription": "Regular-fit shorts in an airy, woven cotton and linen blend with a comfortable, classic silhouette. Drawstring and covered",
+      "description": "Regular-fit shorts in an airy, woven cotton and linen blend with a comfortable, classic silhouette. Drawstring and covered elastic at waistband, zip fly with button, side-seam pockets, and a welt back pocket. Cotton and linen blends combine the softness of cotton with the sturdiness of linen, creating a beautiful, textured fabric that is breathable and perfectly draped.",
+      "category": "Men",
+      "tags": [],
+      "images": [
+        "assets/picture/men/clothes/clothes1.webp",
+        "assets/picture/men/clothes/clothes1_1.webp",
+        "assets/picture/men/clothes/clothes1_2.webp"
+      ],
+      "quantity": 53
+    },
+    {
+      "slug": "men-clothes-relaxed-fit-linen-shirt-54",
+      "sku": "FS-0054",
+      "name": "Relaxed-Fit Linen Shirt",
+      "brand": "H&M",
+      "salePrice": "49.99",
+      "comparePrice": null,
+      "shortDescription": "Relaxed-fit linen shirt with a classic button-front design, offering breathable comfort and an effortlessly casual look.",
+      "description": "Relaxed-fit linen shirt with a classic button-front design, offering breathable comfort and an effortlessly casual look.",
+      "category": "Men",
+      "tags": [],
+      "images": [
+        "assets/picture/men/clothes/clothes2.webp",
+        "assets/picture/men/clothes/clothes2_1.webp",
+        "assets/picture/men/clothes/clothes2_2.webp"
+      ],
+      "quantity": 54
+    },
+    {
+      "slug": "men-clothes-relaxed-fit-linen-blend-shirt-55",
+      "sku": "FS-0055",
+      "name": "Relaxed-Fit Linen-Blend Shirt",
+      "brand": "H&M",
+      "salePrice": "39.99",
+      "comparePrice": null,
+      "shortDescription": "Relaxed-fit cotton and linen-blend shirt with a classic collar and chest pocket, offering breathable comfort and an effortlessly",
+      "description": "Relaxed-fit cotton and linen-blend shirt with a classic collar and chest pocket, offering breathable comfort and an effortlessly refined casual style.",
+      "category": "Men",
+      "tags": [],
+      "images": [
+        "assets/picture/men/clothes/clothes3.webp",
+        "assets/picture/men/clothes/clothes3_1.webp",
+        "assets/picture/men/clothes/clothes3_2.webp"
+      ],
+      "quantity": 55
+    },
+    {
+      "slug": "men-clothes-relaxed-fit-poplin-shirt-56",
+      "sku": "FS-0056",
+      "name": "Relaxed-Fit Poplin Shirt",
+      "brand": "H&M",
+      "salePrice": "39.99",
+      "comparePrice": null,
+      "shortDescription": "Relaxed-fit cotton poplin shirt featuring a classic collar, embroidered chest pocket, and adjustable cuffs. The clean silhouette and",
+      "description": "Relaxed-fit cotton poplin shirt featuring a classic collar, embroidered chest pocket, and adjustable cuffs. The clean silhouette and lightweight fabric create a comfortable, effortlessly casual look.",
+      "category": "Men",
+      "tags": [],
+      "images": [
+        "assets/picture/men/clothes/clothes4.webp",
+        "assets/picture/men/clothes/clothes4_1.webp",
+        "assets/picture/men/clothes/clothes4_2.webp"
+      ],
+      "quantity": 56
+    },
+    {
+      "slug": "men-clothes-slim-fit-t-shirt-57",
+      "sku": "FS-0057",
+      "name": "Slim Fit T-shirt",
+      "brand": "H&M",
+      "salePrice": "9.99",
+      "comparePrice": null,
+      "shortDescription": "Slim-fit T-shirt in lightweight cotton jersey that hugs contours of the body for a fitted silhouette. Round, ribbed",
+      "description": "Slim-fit T-shirt in lightweight cotton jersey that hugs contours of the body for a fitted silhouette. Round, ribbed neck and a straight-cut hem.",
+      "category": "Men",
+      "tags": [],
+      "images": [
+        "assets/picture/men/clothes/clothes1.webp"
+      ],
+      "quantity": 57
+    },
+    {
+      "slug": "men-clothes-loose-fit-hoodie-58",
+      "sku": "FS-0058",
+      "name": "Loose Fit Hoodie",
+      "brand": "H&M",
+      "salePrice": "24.99",
+      "comparePrice": null,
+      "shortDescription": "Loose-fit sweatshirt hoodie in medium weight cotton-blend fabric with a generous, but not oversized silhouette. Jersey-lined, drawstring hood,",
+      "description": "Loose-fit sweatshirt hoodie in medium weight cotton-blend fabric with a generous, but not oversized silhouette. Jersey-lined, drawstring hood, dropped shoulders, long sleeves, and a kangaroo pocket. Wide ribbing at cuffs and hem. Soft, brushed inside.",
+      "category": "Men",
+      "tags": [],
+      "images": [
+        "assets/picture/men/clothes/clothes1.webp"
+      ],
+      "quantity": 58
+    },
+    {
+      "slug": "men-shoes-canvas-sneakers-59",
+      "sku": "FS-0059",
+      "name": "Canvas Sneakers",
+      "brand": "H&M",
+      "salePrice": "39.99",
+      "comparePrice": null,
+      "shortDescription": "Sneakers in cotton canvas with lacing at front. Canvas lining, canvas insoles, and patterned rubber soles.",
+      "description": "Sneakers in cotton canvas with lacing at front. Canvas lining, canvas insoles, and patterned rubber soles.",
+      "category": "Men",
+      "tags": [],
+      "images": [
+        "assets/picture/men/shoes/shoesmen1.webp",
+        "assets/picture/men/shoes/shoesmen1_1.webp",
+        "assets/picture/men/shoes/shoesmen1_2.webp"
+      ],
+      "quantity": 59
+    },
+    {
+      "slug": "men-shoes-sneakers-60",
+      "sku": "FS-0060",
+      "name": "Sneakers",
+      "brand": "H&M",
+      "salePrice": "34.99",
+      "comparePrice": null,
+      "shortDescription": "Retro-inspired sneakers. Tongue, lacing at front, and padded upper edge. Cotton canvas lining, cotton canvas insoles, and patterned",
+      "description": "Retro-inspired sneakers. Tongue, lacing at front, and padded upper edge. Cotton canvas lining, cotton canvas insoles, and patterned rubber soles. Sole thickness approx. 1 1/2 in.",
+      "category": "Men",
+      "tags": [],
+      "images": [
+        "assets/picture/men/shoes/shoesmen2.webp",
+        "assets/picture/men/shoes/shoesmen2_1.webp",
+        "assets/picture/men/shoes/shoesmen2_2.webp"
+      ],
+      "quantity": 30
+    },
+    {
+      "slug": "outerwear-long-padded-anorak-with-hood-61",
+      "sku": "FS-0061",
+      "name": "Long Padded Anorak with Hood",
+      "brand": "Mango",
+      "salePrice": "133.00",
+      "comparePrice": null,
+      "shortDescription": "Crafted from premium synthetic fabric with a water-repellent finish, the outer shell effectively sheds light rain and snow.",
+      "description": "Crafted from premium synthetic fabric with a water-repellent finish, the outer shell effectively sheds light rain and snow. Filled with thick yet ultra-light insulation, this anorak provides exceptional warmth while maintaining a comfortable, lightweight feel.",
+      "category": "Outerwear",
+      "tags": [],
+      "images": [
+        "assets/picture/outerwear/outerwear1.webp",
+        "assets/picture/outerwear/outerwear1_1.webp",
+        "assets/picture/outerwear/outerwear1_2.webp"
+      ],
+      "quantity": 31
+    },
+    {
+      "slug": "outerwear-suede-jacket-with-pockets-62",
+      "sku": "FS-0062",
+      "name": "Suede Jacket with Pockets",
+      "brand": "Mango",
+      "salePrice": "380.00",
+      "comparePrice": null,
+      "shortDescription": "Crafted from 100% genuine goat suede leather, this jacket features an exceptionally soft texture, substantial feel, and long-lasting",
+      "description": "Crafted from 100% genuine goat suede leather, this jacket features an exceptionally soft texture, substantial feel, and long-lasting durability. Finished with a smooth inner lining, it provides maximum comfort and a refined wearing experience.",
+      "category": "Outerwear",
+      "tags": [],
+      "images": [
+        "assets/picture/outerwear/outerwear2.webp",
+        "assets/picture/outerwear/outerwear2_1.webp",
+        "assets/picture/outerwear/outerwear2_2.webp"
+      ],
+      "quantity": 32
+    },
+    {
+      "slug": "outerwear-corduroy-collar-denim-jacket-63",
+      "sku": "FS-0063",
+      "name": "Corduroy Collar Denim Jacket",
+      "brand": "Mango",
+      "salePrice": "76.00",
+      "comparePrice": null,
+      "shortDescription": "Crafted from 100% premium cotton denim, this jacket features a durable, structured construction that holds its shape well.",
+      "description": "Crafted from 100% premium cotton denim, this jacket features a durable, structured construction that holds its shape well. The fabric showcases a naturally rugged denim texture while remaining exceptionally smooth and comfortable to the touch.",
+      "category": "Outerwear",
+      "tags": [],
+      "images": [
+        "assets/picture/outerwear/outerwear3.webp",
+        "assets/picture/outerwear/outerwear3_1.webp",
+        "assets/picture/outerwear/outerwear3_2.webp"
+      ],
+      "quantity": 33
+    },
+    {
+      "slug": "outerwear-utility-short-jacket-64",
+      "sku": "FS-0064",
+      "name": "Utility Short Jacket",
+      "brand": "UNIQLO",
+      "salePrice": "29.80",
+      "comparePrice": null,
+      "shortDescription": "Crafted from pre-washed natural cotton fabric, offering the perfect balance of structure and comfort. The fabric is durable",
+      "description": "Crafted from pre-washed natural cotton fabric, offering the perfect balance of structure and comfort. The fabric is durable and shape-retaining, while remaining soft, smooth, and breathable for all-day wear.",
+      "category": "Outerwear",
+      "tags": [],
+      "images": [
+        "assets/picture/outerwear/outerwear4.webp",
+        "assets/picture/outerwear/outerwear4_1.webp",
+        "assets/picture/outerwear/outerwear4_2.webp"
+      ],
+      "quantity": 34
+    },
+    {
+      "slug": "pants-wide-cut-pull-on-pants-65",
+      "sku": "FS-0065",
+      "name": "Wide-cut Pull-on Pants",
+      "brand": "H&M",
+      "salePrice": "19.99",
+      "comparePrice": null,
+      "shortDescription": "Women's wide-leg palazzo pants featuring a minimalist design, offering a light, comfortable, and effortlessly elegant style",
+      "description": "Women's wide-leg palazzo pants featuring a minimalist design, offering a light, comfortable, and effortlessly elegant style",
+      "category": "Bottoms",
+      "tags": [],
+      "images": [
+        "assets/picture/pants/pants1.webp",
+        "assets/picture/pants/pants1_1.webp",
+        "assets/picture/pants/pants1_2.webp"
+      ],
+      "quantity": 35
+    },
+    {
+      "slug": "pants-wide-leg-pull-on-pants-66",
+      "sku": "FS-0066",
+      "name": "Wide-Leg Pull-On Pants",
+      "brand": "H&M",
+      "salePrice": "24.99",
+      "comparePrice": null,
+      "shortDescription": "H&M women's cream wide-leg trousers featuring a relaxed, straight-cut silhouette and a comfortable fit. The discreet elastic waistband",
+      "description": "H&M women's cream wide-leg trousers featuring a relaxed, straight-cut silhouette and a comfortable fit. The discreet elastic waistband provides a secure yet flexible fit around the waist while maintaining a clean, refined look.",
+      "category": "Bottoms",
+      "tags": [],
+      "images": [
+        "assets/picture/pants/pants2.webp",
+        "assets/picture/pants/pants2_1.webp",
+        "assets/picture/pants/pants2_2.webp"
+      ],
+      "quantity": 36
+    },
+    {
+      "slug": "pants-linen-blend-barrel-leg-pants-67",
+      "sku": "FS-0067",
+      "name": "Linen-Blend Barrel-Leg Pants",
+      "brand": "H&M",
+      "salePrice": "39.99",
+      "comparePrice": null,
+      "shortDescription": "Women's linen-blend barrel-leg trousers featuring a relaxed silhouette with a gently curved shape. Designed with a contemporary utility-inspired",
+      "description": "Women's linen-blend barrel-leg trousers featuring a relaxed silhouette with a gently curved shape. Designed with a contemporary utility-inspired aesthetic, these pants offer a modern, effortless look that balances comfort and style",
+      "category": "Bottoms",
+      "tags": [],
+      "images": [
+        "assets/picture/pants/pants3.webp",
+        "assets/picture/pants/pants3_1.webp",
+        "assets/picture/pants/pants3_2.webp"
+      ],
+      "quantity": 37
+    },
+    {
+      "slug": "pants-modal-blend-barrel-leg-pants-68",
+      "sku": "FS-0068",
+      "name": "Modal-Blend Barrel-Leg Pants",
+      "brand": "H&M",
+      "salePrice": "39.99",
+      "comparePrice": null,
+      "shortDescription": "Women's cream striped barrel-leg trousers featuring a softly structured silhouette. The minimalist striped pattern and natural color palette",
+      "description": "Women's cream striped barrel-leg trousers featuring a softly structured silhouette. The minimalist striped pattern and natural color palette create a rustic yet contemporary look, offering an effortlessly chic and modern style",
+      "category": "Bottoms",
+      "tags": [],
+      "images": [
+        "assets/picture/pants/pants4.webp",
+        "assets/picture/pants/pants4_1.webp",
+        "assets/picture/pants/pants4_2.webp"
+      ],
+      "quantity": 38
+    },
+    {
+      "slug": "shirt-and-blouses-light-blouse-69",
+      "sku": "FS-0069",
+      "name": "Light blouse",
+      "brand": "Dorothy Perkins",
+      "salePrice": "15.50",
+      "comparePrice": "30.50",
+      "shortDescription": "Basic white crew-neck T-shirt featuring a clean and minimalist design. The highlight of the garment is its cap",
+      "description": "Basic white crew-neck T-shirt featuring a clean and minimalist design. The highlight of the garment is its cap sleeve construction, with subtly angled sleeve cuts that gently contour the upper arms. Designed in a flattering slim-fit silhouette, it offers a comfortable yet feminine look, making it ideal for tucking into skirts or pairing with high-waisted trousers for a polished everyday outfit.",
+      "category": "Tops",
+      "tags": [],
+      "images": [
+        "assets/picture/shirt&blouses/lightblouse.webp",
+        "assets/picture/shirt&blouses/lightblouse1.webp"
+      ],
+      "quantity": 39
+    },
+    {
+      "slug": "shirt-and-blouses-sweater-florins-light-beige-70",
+      "sku": "FS-0070",
+      "name": "Sweater florins - light beige",
+      "brand": "Mango",
+      "salePrice": "39.99",
+      "comparePrice": null,
+      "shortDescription": "A straight-design crewneck sweater crafted from an ecru braided pointelle-knit fabric infused with metallic Lurex thread for a",
+      "description": "A straight-design crewneck sweater crafted from an ecru braided pointelle-knit fabric infused with metallic Lurex thread for a subtle shimmer effect. It is designed with dropped shoulders, long relaxed sleeves, and rib-knit trim along the collar, cuffs, and bottom hemline.",
+      "category": "Tops",
+      "tags": [],
+      "images": [
+        "assets/picture/shirt&blouses/original_1.webp",
+        "assets/picture/shirt&blouses/original.webp",
+        "assets/picture/shirt&blouses/original_2.webp"
+      ],
+      "quantity": 40
+    },
+    {
+      "slug": "shirt-and-blouses-cropped-poplin-shirt-gigi-shirt-71",
+      "sku": "FS-0071",
+      "name": "Cropped Poplin Shirt (Gigi Shirt)",
+      "brand": "Mango",
+      "salePrice": "29.99",
+      "comparePrice": null,
+      "shortDescription": "A structured white button-up poplin shirt crafted from a lightweight cotton-viscose blend. It features an oversized classic collar,",
+      "description": "A structured white button-up poplin shirt crafted from a lightweight cotton-viscose blend. It features an oversized classic collar, a cropped straight hemline, and relaxed long sleeves with exaggerated single-button statement cuffs.",
+      "category": "Tops",
+      "tags": [],
+      "images": [
+        "assets/picture/shirt&blouses/shirtblouse2.webp",
+        "assets/picture/shirt&blouses/shirtblouse3.webp",
+        "assets/picture/shirt&blouses/shirtblouse1.webp"
+      ],
+      "quantity": 41
+    },
+    {
+      "slug": "shirt-and-blouses-t-shirt-spanish-72",
+      "sku": "FS-0072",
+      "name": "T-shirt SPANISH",
+      "brand": "Mango",
+      "salePrice": "16.99",
+      "comparePrice": null,
+      "shortDescription": "A classic short-sleeve crew neck t-shirt made from a lightweight cotton blend. It features a straight-cut silhouette with",
+      "description": "A classic short-sleeve crew neck t-shirt made from a lightweight cotton blend. It features a straight-cut silhouette with a black seriffed phrase reading \"See you pronto\" printed across the chest",
+      "category": "Tops",
+      "tags": [],
+      "images": [
+        "assets/picture/shirt&blouses/spanish1.webp",
+        "assets/picture/shirt&blouses/spanish1_1.webp",
+        "assets/picture/shirt&blouses/spanish1_2.webp"
+      ],
+      "quantity": 42
+    },
+    {
+      "slug": "shoes-puma-speedcat-ballet-shoes-73",
+      "sku": "FS-0073",
+      "name": "Puma Speedcat Ballet Shoes",
+      "brand": "PUMA",
+      "salePrice": "74.14",
+      "comparePrice": null,
+      "shortDescription": "The PUMA Speedcat Ballet Suede Wns combines the feminine elegance of the balletcore trend with the iconic racing",
+      "description": "The PUMA Speedcat Ballet Suede Wns combines the feminine elegance of the balletcore trend with the iconic racing heritage of the PUMA Speedcat, creating a sleek, stylish, and contemporary look.",
+      "category": "Shoes",
+      "tags": [],
+      "images": [
+        "assets/picture/shoes/shoes1.webp",
+        "assets/picture/shoes/shoes1_1.webp",
+        "assets/picture/shoes/shoes1_2.webp"
+      ],
+      "quantity": 43
+    },
+    {
+      "slug": "shoes-basketball-shoes-74",
+      "sku": "FS-0074",
+      "name": "Basketball Shoes",
+      "brand": "Nike",
+      "salePrice": "157.50",
+      "comparePrice": null,
+      "shortDescription": "Inspired by Phoenix basketball culture, this special-edition Book 2 features vibrant purple and orange accents and a durable",
+      "description": "Inspired by Phoenix basketball culture, this special-edition Book 2 features vibrant purple and orange accents and a durable rubber outsole for reliable traction on outdoor courts.",
+      "category": "Shoes",
+      "tags": [],
+      "images": [
+        "assets/picture/shoes/shoes2.webp",
+        "assets/picture/shoes/shoes2_1.webp",
+        "assets/picture/shoes/shoes2_2.webp"
+      ],
+      "quantity": 44
+    },
+    {
+      "slug": "shoes-book-2-x-mcdonald-s-ep-75",
+      "sku": "FS-0075",
+      "name": "Book 2 x McDonald's EP",
+      "brand": "Nike",
+      "salePrice": "168.90",
+      "comparePrice": null,
+      "shortDescription": "The Book 2 x McDonald's EP** blends Arizona-inspired design with high-performance basketball technology, featuring a durable outsole for",
+      "description": "The Book 2 x McDonald's EP** blends Arizona-inspired design with high-performance basketball technology, featuring a durable outsole for dependable traction on outdoor courts.",
+      "category": "Shoes",
+      "tags": [],
+      "images": [
+        "assets/picture/shoes/shoes3.webp",
+        "assets/picture/shoes/shoes3_1.webp",
+        "assets/picture/shoes/shoes3_2.webp"
+      ],
+      "quantity": 45
+    },
+    {
+      "slug": "shoes-air-jordan-1-low-76",
+      "sku": "FS-0076",
+      "name": "Air Jordan 1 Low",
+      "brand": "Nike",
+      "salePrice": "124.10",
+      "comparePrice": null,
+      "shortDescription": "The Air Jordan 1 features premium leather in Barely Grape with Lemon Wash accents, combining iconic style and",
+      "description": "The Air Jordan 1 features premium leather in Barely Grape with Lemon Wash accents, combining iconic style and Nike Air cushioning for a fresh, timeless look.",
+      "category": "Shoes",
+      "tags": [],
+      "images": [
+        "assets/picture/shoes/shoes4.webp",
+        "assets/picture/shoes/shoes4_1.webp",
+        "assets/picture/shoes/shoes4_2.webp"
+      ],
+      "quantity": 46
+    },
+    {
+      "slug": "shorts-firebird-classic-shorts-77",
+      "sku": "FS-0077",
+      "name": "Firebird Classic Shorts",
+      "brand": "adidas",
+      "salePrice": "38.30",
+      "comparePrice": null,
+      "shortDescription": "The Firebird Classic Shorts feature a relaxed fit with a mid-rise waistband, offering all-day comfort and effortless everyday",
+      "description": "The Firebird Classic Shorts feature a relaxed fit with a mid-rise waistband, offering all-day comfort and effortless everyday style. Designed with a sporty yet versatile look, these shorts are perfect for casual wear and easy styling.",
+      "category": "Bottoms",
+      "tags": [],
+      "images": [
+        "assets/picture/shorts/shorts2.webp",
+        "assets/picture/shorts/shorts2_1.webp",
+        "assets/picture/shorts/shorts2_2.webp"
+      ],
+      "quantity": 47
+    },
+    {
+      "slug": "shorts-adibreak-long-shorts-78",
+      "sku": "FS-0078",
+      "name": "Adibreak Long Shorts",
+      "brand": "adidas",
+      "salePrice": "57.40",
+      "comparePrice": null,
+      "shortDescription": "The Adibreak Long Shorts are part of the adidas Originals collection. Featuring a relaxed long-length silhouette inspired by",
+      "description": "The Adibreak Long Shorts are part of the adidas Originals collection. Featuring a relaxed long-length silhouette inspired by classic sportswear, these shorts combine comfort and iconic style for a casual, streetwear-inspired look.",
+      "category": "Bottoms",
+      "tags": [],
+      "images": [
+        "assets/picture/shorts/shorts1.webp",
+        "assets/picture/shorts/shorts1_1.webp",
+        "assets/picture/shorts/shorts1_2.webp"
+      ],
+      "quantity": 48
+    },
+    {
+      "slug": "shorts-firebird-classic-shorts-79",
+      "sku": "FS-0079",
+      "name": "Firebird Classic Shorts",
+      "brand": "adidas",
+      "salePrice": "38.30",
+      "comparePrice": null,
+      "shortDescription": "The Firebird Classic Shorts feature a relaxed fit with a mid-rise waistband, offering all-day comfort and effortless everyday",
+      "description": "The Firebird Classic Shorts feature a relaxed fit with a mid-rise waistband, offering all-day comfort and effortless everyday style. Designed with a sporty yet versatile look, these shorts are perfect for casual wear and easy styling.",
+      "category": "Bottoms",
+      "tags": [],
+      "images": [
+        "assets/picture/shorts/shorts2.webp",
+        "assets/picture/shorts/shorts2_1.webp",
+        "assets/picture/shorts/shorts2_2.webp"
+      ],
+      "quantity": 49
+    },
+    {
+      "slug": "shorts-adidas-originals-x-liberty-london-firebird-shorts-80",
+      "sku": "FS-0080",
+      "name": "adidas Originals x Liberty London Firebird Shorts",
+      "brand": "adidas",
+      "salePrice": "36.40",
+      "comparePrice": null,
+      "shortDescription": "Relaxed-fit shorts featuring decorative design details, combining modern style with everyday comfort. The roomy silhouette offers ease of",
+      "description": "Relaxed-fit shorts featuring decorative design details, combining modern style with everyday comfort. The roomy silhouette offers ease of movement, while the eye-catching accents create a fashionable and contemporary look.",
+      "category": "Bottoms",
+      "tags": [],
+      "images": [
+        "assets/picture/shorts/shorts3.webp",
+        "assets/picture/shorts/shorts3_1.webp",
+        "assets/picture/shorts/shorts3_2.webp"
+      ],
+      "quantity": 50
+    },
+    {
+      "slug": "shorts-firebird-classic-shorts-81",
+      "sku": "FS-0081",
+      "name": "Firebird Classic Shorts",
+      "brand": "adidas",
+      "salePrice": "34.50",
+      "comparePrice": null,
+      "shortDescription": "Relaxed-fit shorts featuring a loose, roomy silhouette for enhanced comfort and ease of movement. Designed with a casual",
+      "description": "Relaxed-fit shorts featuring a loose, roomy silhouette for enhanced comfort and ease of movement. Designed with a casual sportswear-inspired aesthetic, they offer a comfortable and versatile option for everyday wear.",
+      "category": "Bottoms",
+      "tags": [],
+      "images": [
+        "assets/picture/shorts/shorts4.webp",
+        "assets/picture/shorts/shorts4_1.webp",
+        "assets/picture/shorts/shorts4_2.webp"
+      ],
+      "quantity": 51
+    },
+    {
+      "slug": "skirts-flared-cotton-skirt-82",
+      "sku": "FS-0082",
+      "name": "Flared Cotton Skirt",
+      "brand": "Mango",
+      "salePrice": "49.80",
+      "comparePrice": null,
+      "shortDescription": "MANGO midi skirt featuring a minimalist and elegant design with a naturally flared A-line silhouette. Crafted for a",
+      "description": "MANGO midi skirt featuring a minimalist and elegant design with a naturally flared A-line silhouette. Crafted for a graceful and timeless look, it offers effortless sophistication and versatile everyday styling.",
+      "category": "Bottoms",
+      "tags": [],
+      "images": [
+        "assets/picture/skirts/skirts1.webp",
+        "assets/picture/skirts/skirts1_1.webp",
+        "assets/picture/skirts/skirts1_2.webp"
+      ],
+      "quantity": 52
+    },
+    {
+      "slug": "skirts-skirts2-83",
+      "sku": "FS-0083",
+      "name": "skirts2",
+      "brand": "Mango",
+      "salePrice": "61.30",
+      "comparePrice": null,
+      "shortDescription": "MANGO midi skirt featuring a wide A-line silhouette with soft pleats that create natural volume and movement. The",
+      "description": "MANGO midi skirt featuring a wide A-line silhouette with soft pleats that create natural volume and movement. The elegant design offers a modern, fashion-forward look while maintaining a refined and feminine appeal.",
+      "category": "Bottoms",
+      "tags": [],
+      "images": [
+        "assets/picture/skirts/skirts2.webp",
+        "assets/picture/skirts/skirts2_1.webp"
+      ],
+      "quantity": 53
+    },
+    {
+      "slug": "skirts-gathered-midi-skirt-84",
+      "sku": "FS-0084",
+      "name": "Gathered Midi Skirt",
+      "brand": "Mango",
+      "salePrice": "69.00",
+      "comparePrice": null,
+      "shortDescription": "MANGO Melow midi skirt featuring a softly flared A-line silhouette that creates graceful movement and a feminine look.",
+      "description": "MANGO Melow midi skirt featuring a softly flared A-line silhouette that creates graceful movement and a feminine look. Designed with a modern aesthetic, it combines elegance and comfort for an effortlessly chic everyday style.",
+      "category": "Bottoms",
+      "tags": [],
+      "images": [
+        "assets/picture/skirts/skirts3.webp",
+        "assets/picture/skirts/skirts3_1.webp",
+        "assets/picture/skirts/skirts3_2.webp"
+      ],
+      "quantity": 54
+    },
+    {
+      "slug": "skirts-linen-blend-straight-skirt-85",
+      "sku": "FS-0085",
+      "name": "Linen-Blend Straight Skirt",
+      "brand": "Mango",
+      "salePrice": "61.30",
+      "comparePrice": null,
+      "shortDescription": "MANGO straight skirt crafted from a linen-blend fabric, featuring a sleek straight-cut silhouette that exudes understated elegance. Its",
+      "description": "MANGO straight skirt crafted from a linen-blend fabric, featuring a sleek straight-cut silhouette that exudes understated elegance. Its clean lines and refined design create a sophisticated, versatile look suitable for both casual and polished styling.",
+      "category": "Bottoms",
+      "tags": [],
+      "images": [
+        "assets/picture/skirts/skirts4.webp",
+        "assets/picture/skirts/skirts4_1.webp",
+        "assets/picture/skirts/skirts4_2.webp"
+      ],
+      "quantity": 55
+    }
+  ]
+}

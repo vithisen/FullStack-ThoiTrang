@@ -1,0 +1,12 @@
+Name: Boys' Sports Sandals
+
+Brand: Rabity
+
+Price: $14.10 
+
+Description: Navy blue sports sandals for boys featuring a breathable design and supportive construction. Comfortable and durable, they are perfect for active summer adventures and everyday play.
+
+
+Image: kshoes5.jpg
+
+Image[]: kshoes5_1.jpg, kshoes5_2.jpg

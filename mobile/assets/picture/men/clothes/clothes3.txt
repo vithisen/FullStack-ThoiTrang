@@ -1,0 +1,11 @@
+Name: Relaxed-Fit Linen-Blend Shirt
+
+Brand: H&M
+
+Price: $39.99
+
+Description: Relaxed-fit cotton and linen-blend shirt with a classic collar and chest pocket, offering breathable comfort and an effortlessly refined casual style.
+
+image: clothes3.png
+
+image[]: clothes3_1.png, clothes3_2.png

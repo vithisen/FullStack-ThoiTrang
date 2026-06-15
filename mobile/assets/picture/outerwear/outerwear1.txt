@@ -1,0 +1,13 @@
+Name: Long Padded Anorak with Hood
+
+Brand: Mango
+
+Price: $133
+
+Description: Crafted from premium synthetic fabric with a water-repellent finish, the outer shell effectively sheds light rain and snow. Filled with thick yet ultra-light insulation, this anorak provides exceptional warmth while maintaining a comfortable, lightweight feel.
+
+Image: outerwear1.png
+
+Image[]: outerwear1_1.png, outerwear1_2.png
+
+

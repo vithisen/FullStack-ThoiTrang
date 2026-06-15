@@ -1,0 +1,13 @@
+Name: Linen-Blend Barrel-Leg Pants
+
+Brand: H&M
+
+Price: $39.99
+
+Description: Women's linen-blend barrel-leg trousers featuring a relaxed silhouette with a gently curved shape. Designed with a contemporary utility-inspired aesthetic, these pants offer a modern, effortless look that balances comfort and style
+
+
+Image: pants3.png
+
+Image[]: pants3_1.png, pants3_2.png
+

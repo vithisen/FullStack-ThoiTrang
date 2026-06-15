@@ -1,0 +1,11 @@
+Name: Loose Fit Hoodie
+
+Brand: H&M
+
+Price: $24.99
+
+Description: Loose-fit sweatshirt hoodie in medium weight cotton-blend fabric with a generous, but not oversized silhouette. Jersey-lined, drawstring hood, dropped shoulders, long sleeves, and a kangaroo pocket. Wide ribbing at cuffs and hem. Soft, brushed inside.
+
+Image: clothes6.png
+
+Image[]: clothes6_1.png, clothes6_2.png

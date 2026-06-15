@@ -1,0 +1,11 @@
+Name: Baggy High Jeans
+
+Brand: H&M
+
+Price: USD 31.35
+
+Description: High-waisted baggy jeans featuring a wide-leg silhouette, offering comfort and a timeless vintage look. Perfect for casual and effortless everyday styling.
+
+image: pants1.avif
+
+image[]: pants1_1.avif, pants1_2.avif

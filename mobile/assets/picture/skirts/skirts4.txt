@@ -1,0 +1,11 @@
+Name: Linen-Blend Straight Skirt
+
+Brand: Mango
+
+Price: $61.30 
+
+Description: MANGO straight skirt crafted from a linen-blend fabric, featuring a sleek straight-cut silhouette that exudes understated elegance. Its clean lines and refined design create a sophisticated, versatile look suitable for both casual and polished styling.
+
+Image: skirts4.png
+
+Image: skirts4_1.png, skirts4_2.png

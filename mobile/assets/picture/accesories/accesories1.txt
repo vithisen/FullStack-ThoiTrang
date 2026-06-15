@@ -1,0 +1,11 @@
+Name: Dior Core Ring
+
+Brand: Dior
+
+Price: $440.60 
+
+Description: Elegant Dior Core Ring crafted in gold-finish metal, embellished with sparkling crystals and Rose Tendre lacquer for a refined and feminine look.
+
+Image: accesories1.png
+
+Image: accesories1_1.png, accesories1_2.png

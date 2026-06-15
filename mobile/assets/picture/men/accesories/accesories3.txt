@@ -1,0 +1,11 @@
+Name: Crossbody Bag
+
+Brand: H&M
+
+Price: $29.99
+
+Description: Crossbody bag in durable woven fabric. Handle at top and an adjustable shoulder strap for versatile carrying. Foldover flap secured with a snap lock, an outer compartment with zipper, and an open inner compartment.
+
+image: accesories3.png
+
+image[]: accesories3_1.png, accesories3_2.png

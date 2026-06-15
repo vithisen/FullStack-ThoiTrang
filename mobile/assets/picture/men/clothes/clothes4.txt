@@ -1,0 +1,11 @@
+Name: Relaxed-Fit Poplin Shirt
+
+Brand: H&M
+
+Price: $39.99
+
+Description:Relaxed-fit cotton poplin shirt featuring a classic collar, embroidered chest pocket, and adjustable cuffs. The clean silhouette and lightweight fabric create a comfortable, effortlessly casual look.
+ 
+image: clothes4.png
+
+image[]: clothes4_1.png, clothes4_2.png

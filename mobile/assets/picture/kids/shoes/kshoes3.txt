@@ -1,0 +1,11 @@
+Name: Girls' Ballet Flats
+
+Brand: Rabity
+
+Price: $18.40
+
+Description: Dark brown ballet flats for girls featuring a classic, ladylike design. Elegant and charming, they are perfect for school, outings, and special occasions.
+
+Image: kshoes3.jpg
+
+Image[]: kshoes3_1.jpg, kshoes3_2.jpg

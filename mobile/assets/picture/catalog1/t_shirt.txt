@@ -1,0 +1,11 @@
+Name: Mango Print T-Shirt
+
+Brand: Mango
+
+Image: t_shirt.png
+
+Price:  $20.00
+
+Images[]: t_shirt1.png, t_shirt2.png
+
+Description: Short-sleeve crew-neck T-shirt in light pink with thin black horizontal stripe patterns, offering a youthful and elegant appearance.

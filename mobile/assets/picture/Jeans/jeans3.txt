@@ -1,0 +1,13 @@
+
+Name: Wide High Waist Jeans
+
+
+Brand: H&M
+
+Price: USD 31.35
+
+Description: Women's puddle-style baggy wide-leg jeans in a dark charcoal gray wash, featuring a high-rise waist and an extra-relaxed silhouette. The long, draped hem creates a modern streetwear-inspired look with a casual, effortless feel.
+
+image: pants3.avif
+
+image[]: pants3_1.avif, pants3_2.avif

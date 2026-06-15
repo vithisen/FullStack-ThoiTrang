@@ -1,0 +1,11 @@
+Name: Book 2 x McDonald's EP
+
+Brand: Nike
+
+Price: $168.90 
+
+Description: The Book 2 x McDonald's EP** blends Arizona-inspired design with high-performance basketball technology, featuring a durable outsole for dependable traction on outdoor courts.
+
+Image: shoes3.png
+
+Image[]: shoes3_1.png, shoes3_2.png

@@ -1,0 +1,11 @@
+Name: Kids' Round Sunglasses
+
+Brand: Rabity
+
+Price: $4.90
+
+Description: Stylish round-frame sunglasses for boys and girls, designed to help protect young eyes from the sun while adding a cute and fashionable touch to any outfit.
+
+Image:  k_accesories2.png
+
+Image[]: k_accesories2_1.png, k_accesories2_2.png

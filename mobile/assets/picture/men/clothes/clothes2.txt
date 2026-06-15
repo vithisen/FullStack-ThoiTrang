@@ -1,0 +1,11 @@
+Name: Relaxed-Fit Linen Shirt
+
+Brand: H&M
+
+Price: $49.99
+
+Description: Relaxed-fit linen shirt with a classic button-front design, offering breathable comfort and an effortlessly casual look.
+
+image: clothes2.png
+
+image[]: clothes2_1.png, clothes2_2.png

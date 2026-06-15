@@ -1,0 +1,11 @@
+Name: Corduroy Collar Denim Jacket
+
+Brand: Mango
+
+Price: USD 76
+
+Description: Crafted from 100% premium cotton denim, this jacket features a durable, structured construction that holds its shape well. The fabric showcases a naturally rugged denim texture while remaining exceptionally smooth and comfortable to the touch.
+
+Image: outerwear3.png
+
+Image[]: outerwear3_1.png, outerwear3_2.png

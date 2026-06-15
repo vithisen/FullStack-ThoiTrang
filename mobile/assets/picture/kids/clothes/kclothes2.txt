@@ -1,0 +1,11 @@
+Name: Short-Sleeve Dress for Girls 
+
+Brand: Rabity
+
+Price: $15.30 
+
+Description: A charming sky-blue short-sleeve dress for girls, featuring a tiered princess-style silhouette. Designed for comfort and elegance, it offers a sweet and breezy look perfect for summer days.
+
+Image: kclothes2.png
+
+Image[]: kclothes2_1.png, kclothes2_2.png

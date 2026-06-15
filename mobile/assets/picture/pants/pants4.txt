@@ -1,0 +1,12 @@
+Name: Modal-Blend Barrel-Leg Pants
+
+Brand: H&M
+
+Price: $39.99
+
+Description: Women's cream striped barrel-leg trousers featuring a softly structured silhouette. The minimalist striped pattern and natural color palette create a rustic yet contemporary look, offering an effortlessly chic and modern style
+
+Image: pants4.png
+
+Image[]: pants4_1.png, pants4_2.png
+

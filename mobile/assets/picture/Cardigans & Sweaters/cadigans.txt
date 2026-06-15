@@ -1,0 +1,7 @@
+name: Layered Cardigan
+
+Price: $19.99
+Description: Long-sleeve layered cardigan-style T-shirt in black-brown tones, featuring a minimalist, soft, and modern aesthetic
+
+image: cadigan1.png
+image[]: cadigan1_1.png, cadigan1_2.png

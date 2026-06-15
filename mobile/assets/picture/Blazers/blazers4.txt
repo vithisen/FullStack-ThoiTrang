@@ -1,0 +1,11 @@
+Name: Short-Sleeve Linen Blend Blazer
+
+Brand: H&M
+
+Price: $38
+
+Description: Crafted from a lightweight linen and viscose blend, this woven fabric combines the natural textured character of linen with the softness and fluid drape of viscose. Breathable and moisture-wicking, it ensures lasting comfort while maintaining an effortlessly refined look.
+
+Image: blazers4.png
+
+Image[]: blazers4_1.png

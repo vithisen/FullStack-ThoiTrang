@@ -1,0 +1,14 @@
+Name: Plaid Perfect Flannel Button-Front Shirt (Windowpane Edition)
+
+Brand: Fresh Brand
+
+Image: shirt.png
+
+Price: $17.00 – $25.00 USD
+
+Old Price:$37.00 USD
+
+Images[]: shirt1.png, shirt2.png
+
+Description: This long-sleeve button-front shirt features a classic black-and-white windowpane plaid pattern. Made from soft flannel or a lightweight rayon blend, it offers a comfortable fit with a smooth, breathable feel. Designed with a point collar and two angled flap chest pockets, it pairs effortlessly with jeans for a casual yet polished everyday look.
+

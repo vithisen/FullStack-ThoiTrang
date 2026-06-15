@@ -1,0 +1,7 @@
+Name: Fitted suit blazer
+Brand: Mango
+Price: $68,4
+Description: Structured suiting fabric with a soft inner lining, offering comfort, a refined silhouette, and light warmth.
+
+Image: Blazers1.png
+Image[]: Blazers1_1.png, Blazers1_2.png

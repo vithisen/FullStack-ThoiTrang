@@ -1,0 +1,8 @@
+Name: Fitted suit blazer
+Brand: Mango
+Price: $190
+Description: Wool-blend fabric with a structured silhouette and medium-weight thickness, featuring a smooth, refined surface. Designed with a soft inner lining that provides excellent warmth retention and maximum comfort against the skin.
+
+
+image: blazer2.png
+image[]: blazers2_1.png, blazers2_2.png

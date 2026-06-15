@@ -1,0 +1,11 @@
+Name: Boys' Closed-Toe Sports Sandals 
+
+Brand: Rabity
+
+Price: $14.90
+
+Description: Navy and orange closed-toe sports sandals for boys, featuring a sporty cage-style design that provides enhanced protection and support for active outdoor play.
+
+Image: kshoes6.jpg
+
+Image[]: kshoes6_1.jpg, kshoes6_2.jpg

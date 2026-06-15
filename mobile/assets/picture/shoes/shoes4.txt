@@ -1,0 +1,11 @@
+Name: Air Jordan 1 Low
+
+Brand: Nike
+
+Price: $124.10
+
+Description: The Air Jordan 1 features premium leather in Barely Grape with Lemon Wash accents, combining iconic style and Nike Air cushioning for a fresh, timeless look.
+
+Image: shoes4.png
+
+Image[]: shoes4_1.png, shoes4_2.png

@@ -1,0 +1,11 @@
+Name: Sleeveless Chiffon Dress for Girls 
+
+Brand: Rabity
+
+Price: $7.60 
+
+Description: A charming sleeveless chiffon dress designed for girls, featuring a sweet princess-inspired style. Perfect for parties, special occasions, or casual outings, it offers an elegant and playful look.
+
+Image: kclothes1.png
+
+Image[]: kclothes1_1.png, kclothes1_2.png

@@ -1,0 +1,12 @@
+Name: Utility Short Jacket
+
+Brand: UNIQLO
+
+Price: $29,8
+
+Description: Crafted from pre-washed natural cotton fabric, offering the perfect balance of structure and comfort. The fabric is durable and shape-retaining, while remaining soft, smooth, and breathable for all-day wear.
+
+
+image: outerwear4.png
+
+image[]: outerwear4_1.png, outerwear4_2.png

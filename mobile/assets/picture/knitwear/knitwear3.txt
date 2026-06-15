@@ -1,0 +1,7 @@
+Name: Round neck knitted cape
+Brand: Mango
+Price: £ 49.99
+Description: Knit fabric that is soft and highly stretchable, with a smooth drape that creates a light, flowing silhouette while still maintaining an elegant and sophisticated look.
+
+Image: knitwear3.avif
+Image[]: knitwear3_1.avif, knitwear3_2.avif

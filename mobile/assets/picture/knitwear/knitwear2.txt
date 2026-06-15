@@ -1,0 +1,12 @@
+Name: Long lurex crochet dress
+
+Brand: Mango
+
+Price: $57.65
+
+Description: Crochet-knit fabric blended with subtle shimmering lurex yarn, featuring an airy open-weave texture and a naturally draped silhouette. Its relaxed, breezy aesthetic makes it an ideal choice for beachwear or outdoor events and parties.
+
+
+Image: knitwear2.png
+
+Image[]: knitwear2_1.png, knitwear2_2.png

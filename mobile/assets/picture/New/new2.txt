@@ -1,0 +1,14 @@
+Name: Regular Fit Printed T-Shirt 
+
+Brand: Tom Tailor
+
+Price:  €15.99 
+
+Old Price: €25.99
+
+Image: new2.png
+
+Images[]: new2_1.png, new2_2.png
+
+Description:
+This classic men's crew-neck T-shirt is made from 100% soft cotton, offering excellent breathability and all-day comfort while remaining gentle on the skin. Designed in a regular-fit silhouette, it provides a comfortable and versatile look suitable for everyday wear. The front features a striking rectangular digital print depicting a close-up view from the deck of a sailing voyage, complemented by the stylized "Heritage Sailing" lettering beneath. The design creates a relaxed, nautical-inspired aesthetic with a distinctive maritime sportswear character.

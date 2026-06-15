@@ -1,0 +1,11 @@
+Name: Crossbody Bag
+
+Brand: H&M
+
+Price: $44.99
+
+Description: Crossbody bag in woven fabric. Adjustable shoulder strap with metal slider buckle, zipper at top, and an outer compartment with flap with a metal clip buckle. One open inner compartment. Lined.
+
+image: accesories2.png
+
+image[]: accesories2_1.png

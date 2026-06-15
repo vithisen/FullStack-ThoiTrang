@@ -1,0 +1,11 @@
+Name: Smocked Strappy Dress
+
+Brand: H&M
+
+Price: $24.99
+
+Description: Calf-length dress in crinkled jersey with a smocked bodice and flared skirt. Adjustable, extra-narrow shoulder straps, square neckline, and a gathered seam at waist.
+
+Image: dresses1.png
+
+Image: dresses1_1.png, dresses1_2.png

@@ -1,0 +1,8 @@
+name: Fine-Knit Cardigan
+brand: H&M
+Price: $17.99
+Description: A mouse-grey rib-knit cardigan featuring a crew neckline, front button closure, and a ribbed hem. Paired with a matching knit sweater casually draped over the shoulders, it creates a youthful and stylish layered look.
+
+
+Image: sweater1.png
+Image[]: sweater1_1.png, sweater1_2.png

@@ -1,0 +1,7 @@
+name: Short-Sleeved Cardigan
+brand: H&M
+Price: $24.99
+Description: Cream-colored short-sleeve knit cardigan, featuring a soft, elegant, and timeless classic style
+
+image: sweater3.png
+image[]: sweater3_1.png, sweater3_2.png

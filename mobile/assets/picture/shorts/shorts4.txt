@@ -1,0 +1,11 @@
+Name: Firebird Classic Shorts
+
+Brand: adidas
+
+Price:$34.50 USD
+
+Description: Relaxed-fit shorts featuring a loose, roomy silhouette for enhanced comfort and ease of movement. Designed with a casual sportswear-inspired aesthetic, they offer a comfortable and versatile option for everyday wear.
+
+Image: shorts4.png
+
+Image[]: shorts4_1.png, shorts4_2.png

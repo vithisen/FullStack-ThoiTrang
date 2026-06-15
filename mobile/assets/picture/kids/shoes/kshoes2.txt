@@ -1,0 +1,11 @@
+Name: Toddler Walking Shoes
+
+Brand: Rabity
+
+Price: $15.30 
+
+Description: Lightweight first-walker shoes for boys and girls, featuring a cushioned sole, breathable upper, and convenient hook-and-loop closure. Designed to provide comfort, flexibility, and support for everyday wear.
+
+Image: kshoes2.jpg
+
+Image[]: kshoes2_1.jpg, kshoes2_2.jpg

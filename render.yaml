@@ -1,0 +1,44 @@
+services:
+  - type: web
+    name: fashion-shop-backend
+    env: docker
+    rootDir: backend
+    plan: free
+    autoDeploy: true
+    healthCheckPath: /api/products
+    envVars:
+      - key: DB_HOST
+        fromDatabase:
+          name: fashion-shop-db
+          property: host
+      - key: DB_PORT
+        fromDatabase:
+          name: fashion-shop-db
+          property: port
+      - key: DB_NAME
+        fromDatabase:
+          name: fashion-shop-db
+          property: database
+      - key: DB_USER
+        fromDatabase:
+          name: fashion-shop-db
+          property: user
+      - key: DB_PASSWORD
+        fromDatabase:
+          name: fashion-shop-db
+          property: password
+      - key: SPRING_JPA_HIBERNATE_DDL_AUTO
+        value: update
+      - key: SPRING_JPA_SHOW_SQL
+        value: "false"
+      - key: HIBERNATE_SQL_LOG_LEVEL
+        value: WARN
+      - key: HIBERNATE_BINDER_LOG_LEVEL
+        value: WARN
+
+databases:
+  - name: fashion-shop-db
+    databaseName: fashion_shop_db
+    user: fashion_shop_user
+    plan: free
+    postgresMajorVersion: "15"

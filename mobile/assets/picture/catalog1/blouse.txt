@@ -1,0 +1,14 @@
+Name: Ribbed Knit Tank Top (Ecru Edition)
+
+Brand: Mango
+
+Image: blouse.png
+
+Price:$19.00 – $23.00 USD
+
+Old Price: $31.00 USD
+
+Images[]: blouse1.png, blouse2.png
+
+Description: This ribbed knit tank top in a soft Ecru/Off-White shade features a flattering slim-fit silhouette and classic round neckline. Crafted from a lightweight, breathable cotton-blend fabric with gentle stretch, it offers all-day comfort and versatility. Perfect for pairing with cargo pants, a woven bucket hat, and layered necklaces for an effortless summer look.
+

@@ -1,0 +1,11 @@
+Name: Slim Fit T-shirt
+
+Brand: H&M
+
+Price: $9.99
+
+Description: Slim-fit T-shirt in lightweight cotton jersey that hugs contours of the body for a fitted silhouette. Round, ribbed neck and a straight-cut hem.
+
+Image: clothes5.png
+
+Image[]: clothes5_1.png, clothes5_2.png

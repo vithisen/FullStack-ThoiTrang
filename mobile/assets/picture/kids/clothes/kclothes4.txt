@@ -1,0 +1,11 @@
+Name: Girls' Pinafore Dress Set
+
+Brand: Rabity
+
+Price: $13.40
+
+Description: A beige khaki pinafore dress paired with a pink striped ribbed T-shirt, creating a cute and playful look. Designed for comfort and practicality, it's perfect for school, outings, and everyday wear.
+
+Image: kclothes4.jpg
+
+Image[]: kclothes4_1.jpg, kclothes4_2.jpg

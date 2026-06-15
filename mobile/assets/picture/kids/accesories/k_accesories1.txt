@@ -1,0 +1,11 @@
+Name: Kids' Water Bottle with Strap 
+
+Brand: Rabity
+
+Price: $9.50 
+
+Description: A cute and practical water bottle for boys and girls, featuring a built-in straw and adjustable carrying strap. Perfect for school, outings, and outdoor adventures.
+
+Image:  k_accesories1.png
+
+Image[]: k_accesories1_1.png, k_accesories1_2.png

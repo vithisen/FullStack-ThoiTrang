@@ -1,0 +1,11 @@
+Name: Girls' Embroidered Ballet Flats 
+
+Brand: Rabity
+
+Price: $18.40 
+
+Description: Cream-colored ballet flats featuring delicate floral embroidery and a graceful vintage-inspired design. Elegant and charming, they are perfect for school, outings, and special occasions.
+
+Image: kshoes4.jpg
+
+Image[]: kshoes4_1.jpg, kshoes4_2.jpg

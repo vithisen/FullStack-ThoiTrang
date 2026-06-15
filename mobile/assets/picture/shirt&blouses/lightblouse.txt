@@ -1,0 +1,13 @@
+Name: Light blouse
+
+Brand: Dorothy Perkins
+
+Price: $15.50
+
+Old Price:  $30.50 USD
+
+Description: Basic white crew-neck T-shirt featuring a clean and minimalist design. The highlight of the garment is its cap sleeve construction, with subtly angled sleeve cuts that gently contour the upper arms. Designed in a flattering slim-fit silhouette, it offers a comfortable yet feminine look, making it ideal for tucking into skirts or pairing with high-waisted trousers for a polished everyday outfit.
+
+image: lightblouse.png
+
+image[]: lightblouse1.png

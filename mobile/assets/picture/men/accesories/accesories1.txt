@@ -1,0 +1,11 @@
+Name: Denim Crossbody Bag
+
+Brand: H&M
+
+Price: $39.99
+
+Description: Small crossbody bag in cotton denim. Adjustable shoulder strap, zipper at top, two outer compartments, and an inner compartment.
+
+image: accesories1.png
+
+image[]: accesories1_1.png, accesories1_2.png

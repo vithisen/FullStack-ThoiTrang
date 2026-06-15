@@ -1,0 +1,11 @@
+Name: Baggy Regular Waist Jeans
+
+Brand: H&M
+
+Price: USD 31.35
+
+Description: Women's wide-leg straight-fit jeans in a classic medium-wash denim blue. Designed with a regular-rise waist and a relaxed silhouette, these jeans offer a timeless, versatile look that blends casual comfort with effortless everyday style.
+
+Image: pants4.png
+
+Image[]: pants4_1.png, pants4_2.png

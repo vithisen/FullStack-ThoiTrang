@@ -1,0 +1,18 @@
+Name: Slim Fit Wrap Knot Poplin Shirt
+
+Brand: Tommy Hilfiger
+
+Price: €103.20 – €134.90 
+
+Image: new1.png
+
+Old Price:– €134.90
+
+Discount: 0%
+
+isNew: True
+
+Images[]: new1_1.png
+
+Description:
+This long-sleeve shirt is crafted from premium poplin fabric made with organic cotton. It features a slim-fit silhouette and a flattering wrap-style V-neckline that creates a streamlined look. A wide side-tie belt at the waist adds a fashionable touch, enhancing the figure while delivering an elegant and sophisticated appearance.

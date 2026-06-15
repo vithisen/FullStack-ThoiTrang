@@ -1,0 +1,11 @@
+Name: Baggy Regular Waist Jeans
+
+Brand: H&M
+
+Price: USD 31.35
+
+Description: Designed with a regular-rise waist and a wide-leg silhouette, these smoky gray jeans offer effortless comfort and a laid-back look. A versatile wardrobe staple for casual, street-style, and everyday outfits.
+
+Image: pants2.png
+
+Image[]: pants2_1.png, pants2_2.png

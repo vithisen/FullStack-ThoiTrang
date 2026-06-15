@@ -1,0 +1,8 @@
+Name: Sweater florins - light beige
+Brand: Mango
+Price: €39.99
+Description: A straight-design crewneck sweater crafted from an ecru braided pointelle-knit fabric infused with metallic Lurex thread for a subtle shimmer effect. It is designed with dropped shoulders, long relaxed sleeves, and rib-knit trim along the collar, cuffs, and bottom hemline.
+
+
+Image: original.jpg
+Images[]: original_1.jpg, original_.jpg

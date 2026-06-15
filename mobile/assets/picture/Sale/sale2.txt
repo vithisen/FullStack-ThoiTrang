@@ -1,0 +1,13 @@
+Name: Long Sleeve High-Slit Maxi Dress
+
+Brand: Monki / PIECES
+
+Image: sale2.png
+
+Price: $29.99 
+
+Images[]: sale2_1.png, sale2_2.png
+
+Old Price: €39.99
+
+Description: This long-sleeve maxi dress features a relaxed silhouette with a high side slit, combining minimalist style with everyday comfort. Crafted from soft stretch jersey fabric with a subtle space-dye texture, it offers a modern and versatile look suitable for various casual occasions. The streamlined design enhances its contemporary appeal, while the side slit adds ease of movement and a touch of effortless elegance. Perfect for those who appreciate a balance of simplicity, comfort, and understated fashion.

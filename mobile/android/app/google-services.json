@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "227558473318",
+    "project_id": "login-7782e",
+    "storage_bucket": "login-7782e.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:227558473318:android:0720fddf1b479e5da1f7a7",
+        "android_client_info": {
+          "package_name": "com.fashion.fashion_shop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "227558473318-k6rmrgi48go37ale6re3t7l06snmcm80.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.fashion.fashion_shop",
+            "certificate_hash": "8fd47088db238a9c3f8bff7b84554d66695a6896"
+          }
+        },
+        {
+          "client_id": "227558473318-qvsrbob1bq8757paj2k8kelavclulc4f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2UVXsmRPFQMneWzj6kNYJTXkNXkVNvGo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "227558473318-qvsrbob1bq8757paj2k8kelavclulc4f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

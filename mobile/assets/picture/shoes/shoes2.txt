@@ -1,0 +1,11 @@
+Name: Basketball Shoes
+
+Brand: Nike
+
+Price: $157.50
+
+Description: Inspired by Phoenix basketball culture, this special-edition Book 2 features vibrant purple and orange accents and a durable rubber outsole for reliable traction on outdoor courts.
+
+Image: shoes2.png
+
+Image[]: shoes2_1.png, shoes2_2.png

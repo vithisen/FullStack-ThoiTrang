@@ -1,0 +1,11 @@
+Name: Regular-Fit Linen-Blend Shorts
+
+Brand: H&M
+
+Price: $29.99
+
+Description: Regular-fit shorts in an airy, woven cotton and linen blend with a comfortable, classic silhouette. Drawstring and covered elastic at waistband, zip fly with button, side-seam pockets, and a welt back pocket. Cotton and linen blends combine the softness of cotton with the sturdiness of linen, creating a beautiful, textured fabric that is breathable and perfectly draped.
+
+image: clothes1.png
+
+image[]: clothes1_1.png, clothes1_2.png
