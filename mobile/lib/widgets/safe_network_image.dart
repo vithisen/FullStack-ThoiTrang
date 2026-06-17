@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import '../config/theme.dart';
 
@@ -20,18 +22,31 @@ class SafeNetworkImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final imageUrl = url;
-    final child = imageUrl == null || imageUrl.isBlank
+    final cleanUrl = imageUrl?.trim();
+    final child = cleanUrl == null || cleanUrl.isBlank
         ? _placeholder()
-        : imageUrl.trim().startsWith('assets/')
+        : cleanUrl.startsWith('assets/')
         ? Image.asset(
-            imageUrl.trim(),
+            cleanUrl,
+            width: width,
+            height: height,
+            fit: fit,
+            errorBuilder: (context, error, stackTrace) => _placeholder(),
+          )
+        : cleanUrl.startsWith('file://') || cleanUrl.startsWith('/')
+        ? Image.file(
+            File(
+              cleanUrl.startsWith('file://')
+                  ? Uri.parse(cleanUrl).toFilePath()
+                  : cleanUrl,
+            ),
             width: width,
             height: height,
             fit: fit,
             errorBuilder: (context, error, stackTrace) => _placeholder(),
           )
         : Image.network(
-            imageUrl,
+            cleanUrl,
             width: width,
             height: height,
             fit: fit,
