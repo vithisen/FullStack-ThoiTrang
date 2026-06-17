@@ -1,41 +1,71 @@
 import 'package:flutter/material.dart';
 import '../../config/theme.dart';
+import '../../services/api_service.dart';
 
-class SubCategoriesScreen extends StatelessWidget {
+class SubCategoriesScreen extends StatefulWidget {
   const SubCategoriesScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  State<SubCategoriesScreen> createState() => _SubCategoriesScreenState();
+}
+
+class _SubCategoriesScreenState extends State<SubCategoriesScreen> {
+  late final String _categoryName;
+  late final int? _categoryId;
+  bool _didInitArgs = false;
+  bool _isLoadingCategories = true;
+  Map<String, int> _categoryIdsByName = {};
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    if (_didInitArgs) return;
+    _didInitArgs = true;
     final rawArgs = ModalRoute.of(context)?.settings.arguments;
     final args = rawArgs is Map<String, dynamic>
         ? rawArgs
         : <String, dynamic>{};
-    final String categoryName =
+    _categoryName =
         args['category'] as String? ??
         (rawArgs is String ? rawArgs : "Clothes");
-    final int? categoryId = args['categoryId'] as int?;
+    _categoryId = args['categoryId'] as int?;
+    _loadCategoryIds();
+  }
 
-    // Danh sách danh mục con động tùy thuộc vào danh mục chính được chọn
-    final List<String> subCategories;
-    if (categoryName == "New") {
-      subCategories = [
+  Future<void> _loadCategoryIds() async {
+    try {
+      final categories = await ApiService.categories();
+      if (!mounted) return;
+      setState(() {
+        _categoryIdsByName = {
+          for (final item in categories.whereType<Map<String, dynamic>>())
+            if (item['id'] is int) '${item['categoryName'] ?? ''}': item['id'],
+        };
+        _isLoadingCategories = false;
+      });
+    } catch (_) {
+      if (!mounted) return;
+      setState(() {
+        _isLoadingCategories = false;
+      });
+    }
+  }
+
+  List<String> get _subCategories {
+    if (_categoryName == "New") {
+      return [
         "New Arrivals",
         "Trending Now",
         "Clearance Sale",
         "Summer Collection",
         "Winter Preview",
       ];
-    } else if (categoryName == "Shoes") {
-      subCategories = [
-        "Heels",
-        "Sneakers",
-        "Boots",
-        "Sandals",
-        "Flats",
-        "Loafers",
-      ];
-    } else if (categoryName == "Accesories") {
-      subCategories = [
+    }
+    if (_categoryName == "Shoes") {
+      return ["Heels", "Sneakers", "Boots", "Sandals", "Flats", "Loafers"];
+    }
+    if (_categoryName == "Accessories") {
+      return [
         "Necklaces",
         "Bags & Purses",
         "Belts",
@@ -43,23 +73,51 @@ class SubCategoriesScreen extends StatelessWidget {
         "Sunglasses",
         "Jewelry",
       ];
-    } else {
-      // Mặc định là Clothes
-      subCategories = [
-        "Tops",
-        "Shirts & Blouses",
-        "Cardigans & Sweaters",
-        "Knitwear",
-        "Blazers",
-        "Outerwear",
-        "Pants",
-        "Jeans",
-        "Shorts",
-        "Skirts",
-        "Dresses",
-      ];
     }
+    return [
+      "Tops",
+      "Shirts & Blouses",
+      "Cardigans & Sweaters",
+      "Knitwear",
+      "Blazers",
+      "Outerwear",
+      "Pants",
+      "Jeans",
+      "Shorts",
+      "Skirts",
+      "Dresses",
+    ];
+  }
 
+  Map<String, dynamic> _catalogArgsFor(String subcategory) {
+    final mappedCategory = switch (subcategory) {
+      'Shirts & Blouses' => 'Tops',
+      'Cardigans & Sweaters' => 'Knitwear',
+      'Blazers' => 'Outerwear',
+      'Pants' || 'Jeans' || 'Shorts' || 'Skirts' => 'Bottoms',
+      _ => subcategory,
+    };
+    final query = switch (subcategory) {
+      'Shirts & Blouses' => 'blouse',
+      'Cardigans & Sweaters' => 'sweater',
+      'Blazers' => 'blazer',
+      'Pants' => 'pants',
+      'Jeans' => 'jeans',
+      'Shorts' => 'short',
+      'Skirts' => 'skirt',
+      _ => null,
+    };
+    final mappedId = _categoryIdsByName[mappedCategory] ?? _categoryId;
+    return {
+      'categoryId': mappedId,
+      'category': _categoryName,
+      'subcategory': subcategory,
+      if (query != null) 'q': query,
+    };
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.background,
       appBar: AppBar(
@@ -74,9 +132,8 @@ class SubCategoriesScreen extends StatelessWidget {
             Navigator.pop(context);
           },
         ),
-        // Hiển thị tên danh mục chính động trên AppBar
         title: Text(
-          categoryName,
+          _categoryName,
           style: const TextStyle(
             color: AppColors.textBlack,
             fontSize: 18,
@@ -94,7 +151,6 @@ class SubCategoriesScreen extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // 1. Nút VIEW ALL ITEMS lớn màu đỏ
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: SizedBox(
@@ -102,13 +158,12 @@ class SubCategoriesScreen extends StatelessWidget {
               height: 48,
               child: ElevatedButton(
                 onPressed: () {
-                  // Chuyển sang màn hình Catalog hiển thị tất cả sản phẩm của danh mục
                   Navigator.pushNamed(
                     context,
                     '/catalog',
                     arguments: {
-                      'categoryId': categoryId,
-                      'category': categoryName,
+                      'categoryId': _categoryId,
+                      'category': _categoryName,
                       'subcategory': 'All Items',
                     },
                   );
@@ -132,8 +187,6 @@ class SubCategoriesScreen extends StatelessWidget {
               ),
             ),
           ),
-
-          // 2. Nhãn "Choose category" màu xám
           const Padding(
             padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
             child: Text(
@@ -141,46 +194,46 @@ class SubCategoriesScreen extends StatelessWidget {
               style: TextStyle(color: AppColors.textGrey, fontSize: 14),
             ),
           ),
-
-          // 3. Danh sách dọc ngăn cách bởi Dividers
           Expanded(
             child: Container(
               color: AppColors.white,
-              child: ListView.separated(
-                itemCount: subCategories.length,
-                separatorBuilder: (context, index) => const Divider(
-                  height: 1,
-                  thickness: 1,
-                  color: AppColors.background,
-                ),
-                itemBuilder: (context, index) {
-                  return ListTile(
-                    title: Text(
-                      subCategories[index],
-                      style: const TextStyle(
-                        color: AppColors.textBlack,
-                        fontSize: 16,
+              child: _isLoadingCategories
+                  ? const Center(
+                      child: CircularProgressIndicator(
+                        color: AppColors.primaryRed,
                       ),
+                    )
+                  : ListView.separated(
+                      itemCount: _subCategories.length,
+                      separatorBuilder: (context, index) => const Divider(
+                        height: 1,
+                        thickness: 1,
+                        color: AppColors.background,
+                      ),
+                      itemBuilder: (context, index) {
+                        final subcategory = _subCategories[index];
+                        return ListTile(
+                          title: Text(
+                            subcategory,
+                            style: const TextStyle(
+                              color: AppColors.textBlack,
+                              fontSize: 16,
+                            ),
+                          ),
+                          contentPadding: const EdgeInsets.symmetric(
+                            horizontal: 40,
+                            vertical: 4,
+                          ),
+                          onTap: () {
+                            Navigator.pushNamed(
+                              context,
+                              '/catalog',
+                              arguments: _catalogArgsFor(subcategory),
+                            );
+                          },
+                        );
+                      },
                     ),
-                    contentPadding: const EdgeInsets.symmetric(
-                      horizontal: 40,
-                      vertical: 4,
-                    ),
-                    onTap: () {
-                      // Chuyển sang màn hình Catalog sản phẩm của danh mục con cụ thể
-                      Navigator.pushNamed(
-                        context,
-                        '/catalog',
-                        arguments: {
-                          'categoryId': categoryId,
-                          'category': categoryName,
-                          'subcategory': subCategories[index],
-                        },
-                      );
-                    },
-                  );
-                },
-              ),
             ),
           ),
         ],
