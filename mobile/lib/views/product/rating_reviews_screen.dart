@@ -542,180 +542,315 @@ class _RatingReviewsScreenState extends State<RatingReviewsScreen> {
       context: context,
       backgroundColor: Colors.transparent,
       isScrollControlled: true,
-      builder: (context) {
-        int innerRating = 0;
-        final List<String> innerPhotos = [];
-        final TextEditingController innerController = TextEditingController();
-        final ImagePicker imagePicker = ImagePicker();
+      builder: (context) => _WriteReviewSheet(
+        productId: _productId,
+        savePhoto: _savePickedReviewPhoto,
+        onSubmitted: _loadReviews,
+      ),
+    );
+  }
+}
 
-        return StatefulBuilder(
-          builder: (context, setModalState) {
-            Future<void> pickImages(ImageSource source) async {
-              try {
-                final remainingSlots = 4 - innerPhotos.length;
-                if (remainingSlots <= 0) {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text('Max 4 photos allowed.')),
-                  );
-                  return;
-                }
+class _WriteReviewSheet extends StatefulWidget {
+  final int? productId;
+  final Future<String> Function(XFile photo) savePhoto;
+  final Future<void> Function() onSubmitted;
 
-                if (source == ImageSource.camera) {
-                  final photo = await imagePicker.pickImage(
-                    source: ImageSource.camera,
-                    imageQuality: 78,
-                    maxWidth: 1400,
-                  );
-                  if (photo != null) {
-                    final savedPath = await _savePickedReviewPhoto(photo);
-                    setModalState(() {
-                      innerPhotos.add(savedPath);
-                    });
-                  }
-                  return;
-                }
+  const _WriteReviewSheet({
+    required this.productId,
+    required this.savePhoto,
+    required this.onSubmitted,
+  });
 
-                final photos = await imagePicker.pickMultiImage(
-                  imageQuality: 78,
-                  maxWidth: 1400,
-                );
-                if (photos.isEmpty) return;
-                final savedPaths = await Future.wait(
-                  photos
-                      .take(remainingSlots)
-                      .map((photo) => _savePickedReviewPhoto(photo)),
-                );
-                setModalState(() {
-                  innerPhotos.addAll(savedPaths);
-                });
-              } catch (error) {
-                if (!context.mounted) return;
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text('Cannot pick photo: $error')),
-                );
-              }
-            }
+  @override
+  State<_WriteReviewSheet> createState() => _WriteReviewSheetState();
+}
 
-            Future<void> showPhotoSourceSheet() async {
-              FocusScope.of(context).unfocus();
-              final source = await showModalBottomSheet<ImageSource>(
-                context: context,
-                showDragHandle: true,
-                builder: (context) => SafeArea(
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      ListTile(
-                        leading: const Icon(Icons.photo_library_outlined),
-                        title: const Text('Choose from gallery'),
-                        onTap: () =>
-                            Navigator.pop(context, ImageSource.gallery),
-                      ),
-                      ListTile(
-                        leading: const Icon(Icons.photo_camera_outlined),
-                        title: const Text('Take a photo'),
-                        onTap: () => Navigator.pop(context, ImageSource.camera),
-                      ),
-                    ],
-                  ),
+class _WriteReviewSheetState extends State<_WriteReviewSheet> {
+  final ImagePicker _imagePicker = ImagePicker();
+  final TextEditingController _controller = TextEditingController();
+  final List<String> _photos = [];
+  int _rating = 0;
+  bool _isSubmitting = false;
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  Future<void> _pickImages(ImageSource source) async {
+    try {
+      final remainingSlots = 4 - _photos.length;
+      if (remainingSlots <= 0) {
+        _showMessage('Max 4 photos allowed.');
+        return;
+      }
+
+      if (source == ImageSource.camera) {
+        final photo = await _imagePicker.pickImage(
+          source: ImageSource.camera,
+          imageQuality: 78,
+          maxWidth: 1400,
+        );
+        if (photo == null) return;
+        final savedPath = await widget.savePhoto(photo);
+        if (!mounted) return;
+        setState(() {
+          _photos.add(savedPath);
+        });
+        return;
+      }
+
+      final photos = await _imagePicker.pickMultiImage(
+        imageQuality: 78,
+        maxWidth: 1400,
+      );
+      if (photos.isEmpty) return;
+      final savedPaths = await Future.wait(
+        photos.take(remainingSlots).map(widget.savePhoto),
+      );
+      if (!mounted) return;
+      setState(() {
+        _photos.addAll(savedPaths);
+      });
+    } catch (error) {
+      if (!mounted) return;
+      _showMessage('Cannot pick photo: $error');
+    }
+  }
+
+  Future<void> _showPhotoSourceSheet() async {
+    FocusScope.of(context).unfocus();
+    final source = await showModalBottomSheet<ImageSource>(
+      context: context,
+      showDragHandle: true,
+      builder: (context) => SafeArea(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            ListTile(
+              leading: const Icon(Icons.photo_library_outlined),
+              title: const Text('Choose from gallery'),
+              onTap: () => Navigator.pop(context, ImageSource.gallery),
+            ),
+            ListTile(
+              leading: const Icon(Icons.photo_camera_outlined),
+              title: const Text('Take a photo'),
+              onTap: () => Navigator.pop(context, ImageSource.camera),
+            ),
+          ],
+        ),
+      ),
+    );
+    if (source != null) {
+      await _pickImages(source);
+    }
+  }
+
+  Future<void> _submit() async {
+    if (_rating == 0) {
+      _showMessage('Please select a rating!');
+      return;
+    }
+    final reviewText = _controller.text.trim();
+    if (reviewText.isEmpty) {
+      _showMessage('Please enter your review!');
+      return;
+    }
+    final productId = widget.productId;
+    if (productId == null) {
+      _showMessage('Cannot find product to review');
+      return;
+    }
+
+    setState(() {
+      _isSubmitting = true;
+    });
+    try {
+      await ApiService.addReview(
+        productId,
+        rating: _rating,
+        comment: reviewText,
+        images: List<String>.from(_photos),
+      );
+      if (!mounted) return;
+      Navigator.pop(context);
+      await widget.onSubmitted();
+      if (!mounted) return;
+      _showMessage('Review sent successfully!');
+    } catch (error) {
+      if (!mounted) return;
+      setState(() {
+        _isSubmitting = false;
+      });
+      _showMessage('Cannot send review: $error');
+    }
+  }
+
+  void _showMessage(String message) {
+    ScaffoldMessenger.of(
+      context,
+    ).showSnackBar(SnackBar(content: Text(message)));
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.only(
+        bottom: MediaQuery.of(context).viewInsets.bottom,
+      ),
+      child: Container(
+        constraints: BoxConstraints(
+          maxHeight: MediaQuery.of(context).size.height * 0.9,
+        ),
+        decoration: const BoxDecoration(
+          color: AppColors.white,
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(30),
+            topRight: Radius.circular(30),
+          ),
+        ),
+        padding: const EdgeInsets.only(
+          top: 12,
+          bottom: 32,
+          left: 16,
+          right: 16,
+        ),
+        child: SingleChildScrollView(
+          keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Container(
+                width: 60,
+                height: 6,
+                decoration: BoxDecoration(
+                  color: AppColors.textGrey.withOpacity(0.5),
+                  borderRadius: BorderRadius.circular(3),
                 ),
-              );
-              if (source != null) {
-                await pickImages(source);
-              }
-            }
-
-            return Padding(
-              padding: EdgeInsets.only(
-                bottom: MediaQuery.of(context).viewInsets.bottom,
               ),
-              child: Container(
-                constraints: BoxConstraints(
-                  maxHeight: MediaQuery.of(context).size.height * 0.9,
+              const SizedBox(height: 24),
+              const Text(
+                'What is you rate?',
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: AppColors.textBlack,
                 ),
-                decoration: const BoxDecoration(
+              ),
+              const SizedBox(height: 16),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: List.generate(5, (index) {
+                  final isSelected = index < _rating;
+                  return GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        _rating = index + 1;
+                      });
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 4),
+                      child: Icon(
+                        isSelected ? Icons.star : Icons.star_border,
+                        color: isSelected ? Colors.amber : AppColors.textGrey,
+                        size: 36,
+                      ),
+                    ),
+                  );
+                }),
+              ),
+              const SizedBox(height: 24),
+              const Text(
+                'Please share your opinion\nabout the product',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: AppColors.textBlack,
+                ),
+              ),
+              const SizedBox(height: 16),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 12),
+                decoration: BoxDecoration(
                   color: AppColors.white,
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(30),
-                    topRight: Radius.circular(30),
+                  borderRadius: BorderRadius.circular(4),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.04),
+                      blurRadius: 4,
+                      offset: const Offset(0, 2),
+                    ),
+                  ],
+                ),
+                child: TextField(
+                  controller: _controller,
+                  minLines: 3,
+                  maxLines: 4,
+                  textInputAction: TextInputAction.newline,
+                  decoration: const InputDecoration(
+                    hintText: 'Your review',
+                    hintStyle: TextStyle(color: AppColors.textGrey),
+                    border: InputBorder.none,
                   ),
                 ),
-                padding: const EdgeInsets.only(
-                  top: 12,
-                  bottom: 32,
-                  left: 16,
-                  right: 16,
-                ),
-                child: SingleChildScrollView(
-                  keyboardDismissBehavior:
-                      ScrollViewKeyboardDismissBehavior.onDrag,
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      // Handle
-                      Container(
-                        width: 60,
-                        height: 6,
-                        decoration: BoxDecoration(
-                          color: AppColors.textGrey.withOpacity(0.5),
-                          borderRadius: BorderRadius.circular(3),
-                        ),
-                      ),
-                      const SizedBox(height: 24),
-                      // Title
-                      const Text(
-                        'What is you rate?',
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                          color: AppColors.textBlack,
-                        ),
-                      ),
-                      const SizedBox(height: 16),
-                      // Clickable Stars
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: List.generate(5, (index) {
-                          final isSelected = index < innerRating;
-                          return GestureDetector(
-                            onTap: () {
-                              setModalState(() {
-                                innerRating = index + 1;
-                              });
-                            },
-                            child: Padding(
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 4,
-                              ),
-                              child: Icon(
-                                isSelected ? Icons.star : Icons.star_border,
-                                color: isSelected
-                                    ? Colors.amber
-                                    : AppColors.textGrey,
-                                size: 36,
+              ),
+              const SizedBox(height: 20),
+              SizedBox(
+                height: 92,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                    ...List.generate(_photos.length, (idx) {
+                      return Container(
+                        width: 72,
+                        height: 72,
+                        margin: const EdgeInsets.only(right: 12),
+                        child: Stack(
+                          children: [
+                            SafeNetworkImage(
+                              url: _photos[idx],
+                              width: 72,
+                              height: 72,
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            Positioned(
+                              top: 4,
+                              right: 4,
+                              child: GestureDetector(
+                                onTap: () {
+                                  setState(() {
+                                    _photos.removeAt(idx);
+                                  });
+                                },
+                                child: Container(
+                                  padding: const EdgeInsets.all(2),
+                                  decoration: const BoxDecoration(
+                                    color: AppColors.primaryRed,
+                                    shape: BoxShape.circle,
+                                  ),
+                                  child: const Icon(
+                                    Icons.close,
+                                    size: 10,
+                                    color: AppColors.white,
+                                  ),
+                                ),
                               ),
                             ),
-                          );
-                        }),
-                      ),
-                      const SizedBox(height: 24),
-                      // Description Bold
-                      const Text(
-                        'Please share your opinion\nabout the product',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                          color: AppColors.textBlack,
+                          ],
                         ),
-                      ),
-                      const SizedBox(height: 16),
-                      // TextField container
-                      Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 12),
+                      );
+                    }),
+                    GestureDetector(
+                      onTap: _showPhotoSourceSheet,
+                      child: Container(
+                        width: 72,
+                        height: 72,
                         decoration: BoxDecoration(
                           color: AppColors.white,
-                          borderRadius: BorderRadius.circular(4),
+                          borderRadius: BorderRadius.circular(8),
                           boxShadow: [
                             BoxShadow(
                               color: Colors.black.withOpacity(0.04),
@@ -724,204 +859,70 @@ class _RatingReviewsScreenState extends State<RatingReviewsScreen> {
                             ),
                           ],
                         ),
-                        child: TextField(
-                          controller: innerController,
-                          minLines: 3,
-                          maxLines: 4,
-                          textInputAction: TextInputAction.newline,
-                          decoration: const InputDecoration(
-                            hintText: 'Your review',
-                            hintStyle: TextStyle(color: AppColors.textGrey),
-                            border: InputBorder.none,
-                          ),
-                        ),
-                      ),
-                      const SizedBox(height: 20),
-                      // Photos row + add photos button
-                      SizedBox(
-                        height: 92,
-                        child: ListView(
-                          scrollDirection: Axis.horizontal,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            // Render added photos
-                            ...List.generate(innerPhotos.length, (idx) {
-                              return Container(
-                                width: 72,
-                                height: 72,
-                                margin: const EdgeInsets.only(right: 12),
-                                child: Stack(
-                                  children: [
-                                    SafeNetworkImage(
-                                      url: innerPhotos[idx],
-                                      width: 72,
-                                      height: 72,
-                                      borderRadius: BorderRadius.circular(8),
-                                    ),
-                                    Positioned(
-                                      top: 4,
-                                      right: 4,
-                                      child: GestureDetector(
-                                        onTap: () {
-                                          setModalState(() {
-                                            innerPhotos.removeAt(idx);
-                                          });
-                                        },
-                                        child: Container(
-                                          padding: const EdgeInsets.all(2),
-                                          decoration: const BoxDecoration(
-                                            color: AppColors.primaryRed,
-                                            shape: BoxShape.circle,
-                                          ),
-                                          child: const Icon(
-                                            Icons.close,
-                                            size: 10,
-                                            color: AppColors.white,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              );
-                            }),
-                            // Add photos button
-                            GestureDetector(
-                              onTap: showPhotoSourceSheet,
-                              child: Container(
-                                width: 72,
-                                height: 72,
-                                decoration: BoxDecoration(
-                                  color: AppColors.white,
-                                  borderRadius: BorderRadius.circular(8),
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Colors.black.withOpacity(0.04),
-                                      blurRadius: 4,
-                                      offset: const Offset(0, 2),
-                                    ),
-                                  ],
-                                ),
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Container(
-                                      width: 32,
-                                      height: 32,
-                                      decoration: const BoxDecoration(
-                                        color: AppColors.primaryRed,
-                                        shape: BoxShape.circle,
-                                      ),
-                                      child: const Icon(
-                                        Icons.camera_alt,
-                                        color: AppColors.white,
-                                        size: 16,
-                                      ),
-                                    ),
-                                    const SizedBox(height: 4),
-                                    const Text(
-                                      'Add your photos',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        fontSize: 8,
-                                        fontWeight: FontWeight.w500,
-                                        color: AppColors.textBlack,
-                                      ),
-                                    ),
-                                  ],
-                                ),
+                            Container(
+                              width: 32,
+                              height: 32,
+                              decoration: const BoxDecoration(
+                                color: AppColors.primaryRed,
+                                shape: BoxShape.circle,
+                              ),
+                              child: const Icon(
+                                Icons.camera_alt,
+                                color: AppColors.white,
+                                size: 16,
+                              ),
+                            ),
+                            const SizedBox(height: 4),
+                            const Text(
+                              'Add your photos',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontSize: 8,
+                                fontWeight: FontWeight.w500,
+                                color: AppColors.textBlack,
                               ),
                             ),
                           ],
                         ),
                       ),
-                      const SizedBox(height: 20),
-                      // SEND REVIEW button
-                      SizedBox(
-                        width: double.infinity,
-                        child: ElevatedButton(
-                          onPressed: () async {
-                            if (innerRating == 0) {
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                const SnackBar(
-                                  content: Text('Please select a rating!'),
-                                ),
-                              );
-                              return;
-                            }
-                            final newReviewText = innerController.text.trim();
-                            if (newReviewText.isEmpty) {
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                const SnackBar(
-                                  content: Text('Please enter your review!'),
-                                ),
-                              );
-                              return;
-                            }
-
-                            try {
-                              final productId = _productId;
-                              if (productId == null) {
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  const SnackBar(
-                                    content: Text(
-                                      'Cannot find product to review',
-                                    ),
-                                  ),
-                                );
-                                return;
-                              }
-
-                              await ApiService.addReview(
-                                productId,
-                                rating: innerRating,
-                                comment: newReviewText,
-                                images: List<String>.from(innerPhotos),
-                              );
-                              if (!context.mounted) return;
-                              Navigator.pop(context);
-                              await _loadReviews();
-                              if (!context.mounted) return;
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                const SnackBar(
-                                  content: Text('Review sent successfully!'),
-                                ),
-                              );
-                            } catch (error) {
-                              if (!context.mounted) return;
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                SnackBar(
-                                  content: Text('Cannot send review: $error'),
-                                ),
-                              );
-                            }
-                          },
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: AppColors.primaryRed,
-                            padding: const EdgeInsets.symmetric(vertical: 16),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(25),
-                            ),
-                            elevation: 4,
-                            shadowColor: AppColors.primaryRed.withOpacity(0.4),
-                          ),
-                          child: const Text(
-                            'SEND REVIEW',
-                            style: TextStyle(
-                              color: AppColors.white,
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 20),
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: _isSubmitting ? null : _submit,
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: AppColors.primaryRed,
+                    disabledBackgroundColor: AppColors.primaryRed.withOpacity(
+                      0.55,
+                    ),
+                    padding: const EdgeInsets.symmetric(vertical: 16),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(25),
+                    ),
+                    elevation: 4,
+                    shadowColor: AppColors.primaryRed.withOpacity(0.4),
+                  ),
+                  child: Text(
+                    _isSubmitting ? 'SENDING...' : 'SEND REVIEW',
+                    style: const TextStyle(
+                      color: AppColors.white,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
               ),
-            );
-          },
-        );
-      },
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
