@@ -24,6 +24,7 @@ class _CatalogScreenState extends State<CatalogScreen> {
   String? _selectedSize;
   String? _selectedColor;
   String? _query;
+  String? _assetPathQuery;
   bool? _saleOnly;
   String _sort = 'newest';
   String _displayTitle = "Women's tops";
@@ -50,7 +51,14 @@ class _CatalogScreenState extends State<CatalogScreen> {
         {'category': 'Clothes', 'subcategory': 'Tops'};
     _categoryId = args['categoryId'] as int?;
     _brandId = args['brandId'] as int?;
-    _query = args['q'] as String?;
+    final routeQuery = args['q'] as String?;
+    if (_isAssetPathQuery(routeQuery)) {
+      _assetPathQuery = routeQuery;
+      _query = null;
+    } else {
+      _query = routeQuery;
+      _assetPathQuery = null;
+    }
     _saleOnly = args['saleOnly'] as bool?;
     _sort = args['sort'] as String? ?? _sort;
     final String category = args['category'] ?? "Clothes";
@@ -80,12 +88,15 @@ class _CatalogScreenState extends State<CatalogScreen> {
         sort: _sort,
       );
       final favoriteIds = await _loadFavoriteIds();
+      final apiProducts = products.whereType<Map<String, dynamic>>();
+      final visibleProducts = _assetPathQuery == null
+          ? apiProducts
+          : apiProducts.where(
+              (product) => _matchesAssetPath(product, _assetPathQuery!),
+            );
       if (!mounted) return;
       setState(() {
-        _products = products
-            .whereType<Map<String, dynamic>>()
-            .map(_mapApiProduct)
-            .toList();
+        _products = visibleProducts.map(_mapApiProduct).toList();
         for (final product in _products) {
           product['isFavorite'] = favoriteIds.contains(product['apiId']);
         }
@@ -103,6 +114,25 @@ class _CatalogScreenState extends State<CatalogScreen> {
         });
       }
     }
+  }
+
+  bool _isAssetPathQuery(String? query) {
+    if (query == null) return false;
+    return query.contains('/') || query.contains('&');
+  }
+
+  bool _matchesAssetPath(Map<String, dynamic> product, String query) {
+    final normalizedQuery = query.toLowerCase();
+    bool matches(Object? value) {
+      return value?.toString().toLowerCase().contains(normalizedQuery) ?? false;
+    }
+
+    if (matches(product['thumbnail'])) return true;
+    final images = product['images'];
+    if (images is Iterable) {
+      return images.any(matches);
+    }
+    return false;
   }
 
   Map<String, dynamic> _mapApiProduct(Map<String, dynamic> product) {
