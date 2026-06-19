@@ -11,7 +11,7 @@ class MainPage2 extends StatefulWidget {
 }
 
 class _MainPage2State extends State<MainPage2> {
-  static const String _bannerUrl = "assets/picture/New/new1.webp";
+  static const String _bannerUrl = "assets/picture/main2.jpg";
   static const String _fallbackSale1 = "assets/picture/catalog1/pullover.webp";
   static const String _fallbackNew1 = "assets/picture/catalog1/t_shirt.webp";
 

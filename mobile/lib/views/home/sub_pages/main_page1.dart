@@ -11,13 +11,8 @@ class MainPage1 extends StatefulWidget {
 }
 
 class _MainPage1State extends State<MainPage1> {
-  // Để thay thế ảnh Unsplash thành ảnh local của bạn:
-  // 1. Lưu ảnh vào thư mục mobile/assets/images/ ví dụ banner1.png
-  // 2. Cấu hình pubspec.yaml khai báo assets/images/
-  // 3. Đổi Image.network bên dưới thành Image.asset('assets/images/banner1.png')
-  final String bannerUrl = "assets/picture/main page/main3_black.webp";
-  final String product1Url =
-      "assets/picture/main page/main3_newcollection.webp";
+  final String bannerUrl = "assets/picture/mainpage.png";
+  final String product1Url = "assets/picture/main3_newcollection.png";
   final String product2Url = "assets/picture/shoes/shoes1.webp";
   final String product3Url = "assets/picture/accesories/accesories1.webp";
 

@@ -12,11 +12,10 @@ class MainPage3 extends StatefulWidget {
 
 class _MainPage3State extends State<MainPage3> {
   static const String _fallbackBanner =
-      "assets/picture/men/clothes/clothes1.webp";
-  static const String _fallbackBlackProduct =
-      "assets/picture/categories/clothes.webp";
+      "assets/picture/main3_newcollection.png";
+  static const String _fallbackBlackProduct = "assets/picture/main3_black.png";
   static const String _fallbackHoodieProduct =
-      "assets/picture/main page/mainpage.webp";
+      "assets/picture/main3_menhoodies.png";
 
   String _bannerUrl = _fallbackBanner;
   List<Map<String, dynamic>> _products = [];
@@ -29,20 +28,10 @@ class _MainPage3State extends State<MainPage3> {
 
   Future<void> _loadContent() async {
     try {
-      final results = await Future.wait([
-        ApiService.slideshows(),
-        ApiService.products(sort: 'newest'),
-      ]);
+      final products = await ApiService.products(sort: 'newest');
       if (!mounted) return;
-      final slides = results[0].whereType<Map<String, dynamic>>().toList();
       setState(() {
-        if (slides.isNotEmpty && '${slides.first['image']}'.trim().isNotEmpty) {
-          _bannerUrl = '${slides.first['image']}';
-        }
-        _products = results[1]
-            .whereType<Map<String, dynamic>>()
-            .take(4)
-            .toList();
+        _products = products.whereType<Map<String, dynamic>>().take(4).toList();
       });
     } catch (_) {}
   }
