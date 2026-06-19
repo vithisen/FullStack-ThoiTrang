@@ -1,0 +1,11 @@
+Name: Tokyo Shoes
+
+Brand: Adidas
+
+Price: $64
+
+Description: The adidas Tokyo Shoes blend retro-inspired style with modern everyday comfort. Drawing inspiration from 1970s running silhouettes, these low-profile sneakers feature a sleek suede upper that delivers a timeless vintage look. The lightweight design and slim shape make them easy to pair with a variety of casual outfits, while the durable rubber outsole provides reliable traction and stability throughout the day. Perfect for work, weekend outings, and daily wear, the Tokyo Shoes offer effortless style with classic athletic heritage.
+
+image: menshoes6.png
+
+image[]:  menshoes6_1.png, menshoes6_2.png

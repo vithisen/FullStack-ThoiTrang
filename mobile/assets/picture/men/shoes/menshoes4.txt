@@ -1,0 +1,11 @@
+Name: Dropset Control Training Shoes
+
+Brand: Adidas
+
+Price: $92
+
+Description: Stable training shoes designed for weightlifting and strength workouts. Featuring a wide fit, supportive TPU midfoot torsion system, and breathable mesh upper, they provide excellent stability, grip, and comfort for heavy lifts and dynamic training sessions.
+
+image: menshoes4.png
+
+image[]:  menshoes4_1.png, menshoes4_2.png

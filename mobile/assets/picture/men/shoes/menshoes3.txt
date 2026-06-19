@@ -1,0 +1,11 @@
+Name: Nike Air Jordan 1 Low 'Panda'
+
+Brand: Nike
+
+Price: 134,62 USD
+
+Description: The Nike Air Jordan 1 Low 'Panda' features a clean and iconic White/Black colorway that effortlessly complements any outfit. With its timeless low-top silhouette and versatile monochrome design, this sneaker has become a must-have staple for sneaker enthusiasts and streetwear lovers alike. Stylish, comfortable, and easy to pair with everyday looks, the "Panda" is an essential addition to any sneaker collection.
+
+image: menshoes.png
+
+image[]: menshoes_1.png, menshoes_2.png

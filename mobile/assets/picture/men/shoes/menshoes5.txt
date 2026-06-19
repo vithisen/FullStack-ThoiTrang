@@ -1,0 +1,11 @@
+Name: Dropset 4 Training Shoes
+
+Brand: Adidas
+
+Price:  $133
+
+Description: The adidas Dropset 4 Power Training Shoes are designed for versatile performance across strength training, muscle endurance workouts, and short-distance runs. Featuring adidas Repetitor foam technology, they deliver responsive energy return and reliable stability with every movement. An adjustable lacing system ensures a secure, customized fit, while Geofit heel pods enhance comfort, support, and protection around the heel. The lightweight mesh upper offers excellent breathability while maintaining durability and structure, and the grippy outsole provides dependable traction for dynamic exercises such as box jumps, agility drills, and speed runs.
+
+image: menshoes5.png
+
+image[]:  menshoes5_1.png, menshoes5_2.png
