@@ -561,6 +561,18 @@ class ApiService {
   }
 
   static void _apiLog(String action, String message, [String? detail]) {
+    const ignoreActions = {
+      'PRODUCTS',
+      'CATEGORIES',
+      'BRANDS',
+      'SLIDESHOWS',
+      'COUPONS',
+      'SHIPPING',
+      'REVIEWS',
+      'CUSTOMER'
+    };
+    if (ignoreActions.contains(action)) return;
+
     final timestamp = DateTime.now().toIso8601String();
     final suffix = detail == null ? '' : ' | $detail';
     stdout.writeln('[$timestamp][API][$action] $message$suffix');

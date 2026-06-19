@@ -25,7 +25,26 @@ public class ApiRequestLoggingFilter extends OncePerRequestFilter {
 
     @Override
     protected boolean shouldNotFilter(HttpServletRequest request) {
-        return !request.getRequestURI().startsWith("/api/");
+        String uri = request.getRequestURI();
+        if (!uri.startsWith("/api/")) {
+            return true;
+        }
+        
+        // Skip log for general read-only catalog queries to prevent console clutter
+        String method = request.getMethod();
+        if ("GET".equalsIgnoreCase(method)) {
+            if (uri.endsWith("/products") || 
+                uri.contains("/products/") || 
+                uri.endsWith("/categories") || 
+                uri.endsWith("/brands") || 
+                uri.endsWith("/slideshows") ||
+                uri.endsWith("/attributes") ||
+                uri.endsWith("/coupons") ||
+                uri.endsWith("/shipping-methods")) {
+                return true;
+            }
+        }
+        return false;
     }
 
     @Override
