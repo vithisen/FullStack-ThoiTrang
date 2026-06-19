@@ -11,13 +11,10 @@ class MainPage3 extends StatefulWidget {
 }
 
 class _MainPage3State extends State<MainPage3> {
-  static const String _fallbackBanner =
-      "assets/picture/main3_newcollection.png";
-  static const String _fallbackBlackProduct = "assets/picture/main3_black.png";
-  static const String _fallbackHoodieProduct =
-      "assets/picture/main3_menhoodies.png";
+  static const String _bannerUrl = "assets/picture/main3_newcollection.png";
+  static const String _blackProductUrl = "assets/picture/main3_black.png";
+  static const String _hoodieProductUrl = "assets/picture/main3_menhoodies.png";
 
-  String _bannerUrl = _fallbackBanner;
   List<Map<String, dynamic>> _products = [];
 
   @override
@@ -38,9 +35,6 @@ class _MainPage3State extends State<MainPage3> {
 
   @override
   Widget build(BuildContext context) {
-    final blackProductUrl = _productImage(0, _fallbackBlackProduct);
-    final hoodieProductUrl = _productImage(1, _fallbackHoodieProduct);
-
     return SingleChildScrollView(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -133,7 +127,7 @@ class _MainPage3State extends State<MainPage3> {
                           child: Stack(
                             children: [
                               SafeNetworkImage(
-                                url: blackProductUrl,
+                                url: _blackProductUrl,
                                 width: double.infinity,
                                 height: double.infinity,
                               ),
@@ -165,7 +159,7 @@ class _MainPage3State extends State<MainPage3> {
                     child: Stack(
                       children: [
                         SafeNetworkImage(
-                          url: hoodieProductUrl,
+                          url: _hoodieProductUrl,
                           height: double.infinity,
                           width: double.infinity,
                         ),
@@ -195,14 +189,6 @@ class _MainPage3State extends State<MainPage3> {
         ],
       ),
     );
-  }
-
-  String _productImage(int index, String fallback) {
-    if (_products.length <= index) return fallback;
-    final thumbnail = _products[index]['thumbnail'];
-    return thumbnail == null || '$thumbnail'.trim().isEmpty
-        ? fallback
-        : '$thumbnail';
   }
 
   void _openProductAt(int index) {
