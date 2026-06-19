@@ -346,8 +346,15 @@ class ApiService {
     Map<String, dynamic>? body,
   }) async {
     final client = HttpClient();
+    final requestStartedAt = DateTime.now();
+    final action = _actionLabel(method, path);
     try {
       final uri = Uri.parse('$baseUrl$path');
+      _apiLog(
+        action,
+        '$method $uri',
+        body == null ? null : 'body=${_redact(body)}',
+      );
       final request = await client.openUrl(method, uri);
       request.headers.contentType = ContentType.json;
       if (body != null) {
@@ -355,12 +362,117 @@ class ApiService {
       }
       final response = await request.close();
       final responseBody = await response.transform(utf8.decoder).join();
+      final elapsedMs = DateTime.now()
+          .difference(requestStartedAt)
+          .inMilliseconds;
+      _apiLog(
+        action,
+        'status=${response.statusCode} ${elapsedMs}ms',
+        responseBody.isEmpty
+            ? 'empty response'
+            : _summarizeResponse(responseBody),
+      );
       if (response.statusCode < 200 || response.statusCode >= 300) {
         throw Exception(responseBody.isEmpty ? 'Request failed' : responseBody);
       }
       return responseBody;
+    } catch (error) {
+      final elapsedMs = DateTime.now()
+          .difference(requestStartedAt)
+          .inMilliseconds;
+      _apiLog(action, 'ERROR after ${elapsedMs}ms', '$error');
+      rethrow;
     } finally {
       client.close();
     }
+  }
+
+  static String _actionLabel(String method, String path) {
+    if (path.contains('/auth/login')) return 'LOGIN';
+    if (path.contains('/auth/register')) return 'REGISTER';
+    if (path.contains('/auth/google')) return 'GOOGLE_LOGIN';
+    if (path.contains('/auth/facebook')) return 'FACEBOOK_LOGIN';
+    if (path.contains('/auth/forgot-password')) return 'FORGOT_PASSWORD';
+    if (path.contains('/cart/items') && method == 'POST') return 'ADD_CART';
+    if (path.contains('/cart/items') && method == 'PATCH') return 'UPDATE_CART';
+    if (path.contains('/cart/items') && method == 'DELETE') {
+      return 'DELETE_CART';
+    }
+    if (path.contains('/favorites') && method == 'POST') return 'ADD_FAVORITE';
+    if (path.contains('/favorites') && method == 'DELETE') {
+      return 'REMOVE_FAVORITE';
+    }
+    if (path.contains('/favorites')) return 'LIST_FAVORITES';
+    if (path.contains('/orders') && path.contains('/reorder')) return 'REORDER';
+    if (path.contains('/orders') && method == 'POST') return 'CREATE_ORDER';
+    if (path.contains('/orders')) return 'ORDERS';
+    if (path.contains('/reviews') && method == 'POST') return 'ADD_REVIEW';
+    if (path.contains('/reviews')) return 'REVIEWS';
+    if (path.contains('/addresses') && method == 'POST') return 'ADD_ADDRESS';
+    if (path.contains('/addresses') && method == 'PATCH') {
+      return 'UPDATE_ADDRESS';
+    }
+    if (path.contains('/addresses') && method == 'DELETE') {
+      return 'DELETE_ADDRESS';
+    }
+    if (path.contains('/addresses')) return 'ADDRESSES';
+    if (path.contains('/password')) return 'CHANGE_PASSWORD';
+    if (path.contains('/customers') && method == 'PATCH') {
+      return 'UPDATE_PROFILE';
+    }
+    if (path.contains('/customers')) return 'CUSTOMER';
+    if (path.contains('/products') && method == 'GET') return 'PRODUCTS';
+    if (path.contains('/coupons')) return 'COUPONS';
+    if (path.contains('/shipping-methods')) return 'SHIPPING';
+    return 'REQUEST';
+  }
+
+  static Map<String, dynamic> _redact(Map<String, dynamic> value) {
+    return value.map((key, entry) {
+      final normalizedKey = key.toLowerCase();
+      final shouldHide =
+          normalizedKey.contains('password') ||
+          normalizedKey.contains('token') ||
+          normalizedKey.contains('secret');
+      return MapEntry(key, shouldHide ? '***' : entry);
+    });
+  }
+
+  static String _summarizeResponse(String responseBody) {
+    try {
+      final decoded = jsonDecode(responseBody);
+      if (decoded is List) return 'items=${decoded.length}';
+      if (decoded is Map<String, dynamic>) {
+        final fields = <String>[];
+        for (final key in [
+          'id',
+          'email',
+          'productName',
+          'orderTotal',
+          'subtotal',
+          'total',
+          'message',
+        ]) {
+          if (decoded.containsKey(key)) fields.add('$key=${decoded[key]}');
+        }
+        if (decoded['items'] is List) {
+          fields.add('items=${(decoded['items'] as List).length}');
+        }
+        return fields.isEmpty
+            ? 'keys=${decoded.keys.join(',')}'
+            : fields.join(' ');
+      }
+    } catch (_) {
+      // Fall through to a short raw preview if the response is not JSON.
+    }
+    return responseBody.length <= 240
+        ? responseBody
+        : '${responseBody.substring(0, 240)}...';
+  }
+
+  static void _apiLog(String action, String message, [String? detail]) {
+    final timestamp = DateTime.now().toIso8601String();
+    final suffix = detail == null ? '' : ' | $detail';
+    stdout.writeln('[$timestamp][API][$action] $message$suffix');
   }
 }
