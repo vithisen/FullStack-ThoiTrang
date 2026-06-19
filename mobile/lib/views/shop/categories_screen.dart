@@ -100,6 +100,11 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
                 ? 'assets/picture/categories/new.webp'
                 : 'assets/picture/categories/clothes.webp'),
         id: item?['id'],
+        q: switch (name) {
+          'New' => 'picture/New',
+          'Accessories' => 'picture/accesories',
+          _ => null,
+        },
       );
     }).toList();
   }
@@ -335,12 +340,12 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
       context,
       '/catalog',
       arguments: {
-        'categoryId': audience == 'Women' ? id : audienceId,
+        if (!(audience == 'Women' && name == 'New'))
+          'categoryId': audience == 'Women' ? id : audienceId,
         'category': audience == 'Women' ? name : audience,
         'subcategory': 'All Items',
         if (name == 'New') 'sort': 'newest',
-        if (audience != 'Women' && item['q'] != null) 'q': item['q'],
-        if (audience == 'Women' && name == 'Accessories') 'q': 'Dior',
+        if (item['q'] != null) 'q': item['q'],
       },
     );
   }
