@@ -28,12 +28,19 @@ class ApiService {
     String email,
     String password,
   ) async {
-    final data = await post('/auth/login', {
-      'email': email,
-      'passwordHash': password,
-    });
-    await _setCurrentUserId(data['id']);
-    return data;
+    clientLog('LOGIN_ATTEMPT', 'email=$email');
+    try {
+      final data = await post('/auth/login', {
+        'email': email,
+        'passwordHash': password,
+      });
+      await _setCurrentUserId(data['id']);
+      clientLog('LOGIN_SUCCESS', 'userId=${data['id']}');
+      return data;
+    } catch (e) {
+      clientLog('LOGIN_ERROR', e.toString());
+      rethrow;
+    }
   }
 
   static Future<Map<String, dynamic>> googleLogin({
@@ -43,15 +50,22 @@ class ApiService {
     String? photoUrl,
     String? idToken,
   }) async {
-    final data = await post('/auth/google', {
-      'email': email,
-      'displayName': displayName,
-      'firebaseUid': firebaseUid,
-      'photoUrl': photoUrl,
-      'idToken': idToken,
-    });
-    await _setCurrentUserId(data['id']);
-    return data;
+    clientLog('GOOGLE_LOGIN_ATTEMPT', 'email=$email');
+    try {
+      final data = await post('/auth/google', {
+        'email': email,
+        'displayName': displayName,
+        'firebaseUid': firebaseUid,
+        'photoUrl': photoUrl,
+        'idToken': idToken,
+      });
+      await _setCurrentUserId(data['id']);
+      clientLog('GOOGLE_LOGIN_SUCCESS', 'userId=${data['id']}');
+      return data;
+    } catch (e) {
+      clientLog('GOOGLE_LOGIN_ERROR', e.toString());
+      rethrow;
+    }
   }
 
   static Future<Map<String, dynamic>> facebookLogin({
@@ -61,15 +75,22 @@ class ApiService {
     String? photoUrl,
     String? idToken,
   }) async {
-    final data = await post('/auth/facebook', {
-      'email': email,
-      'displayName': displayName,
-      'firebaseUid': firebaseUid,
-      'photoUrl': photoUrl,
-      'idToken': idToken,
-    });
-    await _setCurrentUserId(data['id']);
-    return data;
+    clientLog('FACEBOOK_LOGIN_ATTEMPT', 'email=$email');
+    try {
+      final data = await post('/auth/facebook', {
+        'email': email,
+        'displayName': displayName,
+        'firebaseUid': firebaseUid,
+        'photoUrl': photoUrl,
+        'idToken': idToken,
+      });
+      await _setCurrentUserId(data['id']);
+      clientLog('FACEBOOK_LOGIN_SUCCESS', 'userId=${data['id']}');
+      return data;
+    } catch (e) {
+      clientLog('FACEBOOK_LOGIN_ERROR', e.toString());
+      rethrow;
+    }
   }
 
   static Future<Map<String, dynamic>> register(
@@ -77,17 +98,24 @@ class ApiService {
     String email,
     String password,
   ) async {
-    final parts = name.trim().split(RegExp(r'\s+'));
-    final firstName = parts.isEmpty ? name : parts.first;
-    final lastName = parts.length > 1 ? parts.sublist(1).join(' ') : '';
-    final data = await post('/auth/register', {
-      'firstName': firstName,
-      'lastName': lastName,
-      'email': email,
-      'passwordHash': password,
-    });
-    await _setCurrentUserId(data['id']);
-    return data;
+    clientLog('REGISTER_ATTEMPT', 'email=$email');
+    try {
+      final parts = name.trim().split(RegExp(r'\s+'));
+      final firstName = parts.isEmpty ? name : parts.first;
+      final lastName = parts.length > 1 ? parts.sublist(1).join(' ') : '';
+      final data = await post('/auth/register', {
+        'firstName': firstName,
+        'lastName': lastName,
+        'email': email,
+        'passwordHash': password,
+      });
+      await _setCurrentUserId(data['id']);
+      clientLog('REGISTER_SUCCESS', 'userId=${data['id']}');
+      return data;
+    } catch (e) {
+      clientLog('REGISTER_ERROR', e.toString());
+      rethrow;
+    }
   }
 
   static Future<void> _setCurrentUserId(Object? value) async {
@@ -99,9 +127,25 @@ class ApiService {
 
   static bool get hasSession => currentUserId != null;
 
+  static Future<void> clientLog(String action, String reason) async {
+    try {
+      final client = HttpClient();
+      final uri = Uri.parse('$baseUrl/client-events');
+      final request = await client.openUrl('POST', uri);
+      request.headers.contentType = ContentType.json;
+      request.write(jsonEncode({'action': action, 'reason': reason, 'userId': currentUserId}));
+      final response = await request.close();
+      await response.transform(utf8.decoder).join();
+      client.close();
+    } catch (_) {
+      // ignore
+    }
+  }
+
   static int _requireCustomerId(int? customerId) {
     final resolvedId = customerId ?? currentUserId;
     if (resolvedId == null) {
+      clientLog('SESSION_BLOCKED', 'No customerId or currentUserId found in session');
       throw Exception('Please login first');
     }
     return resolvedId;
@@ -166,30 +210,53 @@ class ApiService {
     String size = 'L',
     String color = 'Black',
     int? customerId,
-  }) {
-    return post('/customers/${_requireCustomerId(customerId)}/cart/items', {
-      'productId': productId,
-      'quantity': quantity,
-      'size': size,
-      'color': color,
-    });
+  }) async {
+    clientLog('ADD_CART_ATTEMPT', 'productId=$productId quantity=$quantity');
+    try {
+      final res = await post('/customers/${_requireCustomerId(customerId)}/cart/items', {
+        'productId': productId,
+        'quantity': quantity,
+        'size': size,
+        'color': color,
+      });
+      clientLog('ADD_CART_SUCCESS', 'productId=$productId');
+      return res;
+    } catch (e) {
+      clientLog('ADD_CART_ERROR', 'productId=$productId error=$e');
+      rethrow;
+    }
   }
 
   static Future<Map<String, dynamic>> updateCartItem(
     int itemId,
     int quantity, {
     int? customerId,
-  }) {
-    return patch(
-      '/customers/${_requireCustomerId(customerId)}/cart/items/$itemId',
-      {'quantity': quantity},
-    );
+  }) async {
+    clientLog('UPDATE_CART_ATTEMPT', 'itemId=$itemId quantity=$quantity');
+    try {
+      final res = await patch(
+        '/customers/${_requireCustomerId(customerId)}/cart/items/$itemId',
+        {'quantity': quantity},
+      );
+      clientLog('UPDATE_CART_SUCCESS', 'itemId=$itemId');
+      return res;
+    } catch (e) {
+      clientLog('UPDATE_CART_ERROR', 'itemId=$itemId error=$e');
+      rethrow;
+    }
   }
 
   static Future<void> deleteCartItem(int itemId, {int? customerId}) async {
-    await delete(
-      '/customers/${_requireCustomerId(customerId)}/cart/items/$itemId',
-    );
+    clientLog('DELETE_CART_ATTEMPT', 'itemId=$itemId');
+    try {
+      await delete(
+        '/customers/${_requireCustomerId(customerId)}/cart/items/$itemId',
+      );
+      clientLog('DELETE_CART_SUCCESS', 'itemId=$itemId');
+    } catch (e) {
+      clientLog('DELETE_CART_ERROR', 'itemId=$itemId error=$e');
+      rethrow;
+    }
   }
 
   static Future<List<dynamic>> favorites({int? customerId}) {
@@ -199,16 +266,31 @@ class ApiService {
   static Future<Map<String, dynamic>> addFavorite(
     int productId, {
     int? customerId,
-  }) {
-    return post('/customers/${_requireCustomerId(customerId)}/favorites', {
-      'productId': productId,
-    });
+  }) async {
+    clientLog('ADD_FAVORITE_ATTEMPT', 'productId=$productId');
+    try {
+      final res = await post('/customers/${_requireCustomerId(customerId)}/favorites', {
+        'productId': productId,
+      });
+      clientLog('ADD_FAVORITE_SUCCESS', 'productId=$productId');
+      return res;
+    } catch (e) {
+      clientLog('ADD_FAVORITE_ERROR', 'productId=$productId error=$e');
+      rethrow;
+    }
   }
 
   static Future<void> removeFavorite(int productId, {int? customerId}) async {
-    await delete(
-      '/customers/${_requireCustomerId(customerId)}/favorites/$productId',
-    );
+    clientLog('REMOVE_FAVORITE_ATTEMPT', 'productId=$productId');
+    try {
+      await delete(
+        '/customers/${_requireCustomerId(customerId)}/favorites/$productId',
+      );
+      clientLog('REMOVE_FAVORITE_SUCCESS', 'productId=$productId');
+    } catch (e) {
+      clientLog('REMOVE_FAVORITE_ERROR', 'productId=$productId error=$e');
+      rethrow;
+    }
   }
 
   static Future<List<dynamic>> coupons() => getList('/coupons');
@@ -289,14 +371,22 @@ class ApiService {
     String? couponCode,
     int? shippingMethodId,
     int? customerId,
-  }) {
-    final body = <String, dynamic>{};
-    if (addressId != null) body['addressId'] = addressId;
-    if (couponCode != null && couponCode.trim().isNotEmpty) {
-      body['couponCode'] = couponCode.trim();
+  }) async {
+    clientLog('CREATE_ORDER_ATTEMPT', 'couponCode=$couponCode');
+    try {
+      final body = <String, dynamic>{};
+      if (addressId != null) body['addressId'] = addressId;
+      if (couponCode != null && couponCode.trim().isNotEmpty) {
+        body['couponCode'] = couponCode.trim();
+      }
+      if (shippingMethodId != null) body['shippingMethodId'] = shippingMethodId;
+      final res = await post('/customers/${_requireCustomerId(customerId)}/orders', body);
+      clientLog('CREATE_ORDER_SUCCESS', 'orderId=${res['id']}');
+      return res;
+    } catch (e) {
+      clientLog('CREATE_ORDER_ERROR', 'error=$e');
+      rethrow;
     }
-    if (shippingMethodId != null) body['shippingMethodId'] = shippingMethodId;
-    return post('/customers/${_requireCustomerId(customerId)}/orders', body);
   }
 
   static Future<List<dynamic>> orders({int? customerId}) {

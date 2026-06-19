@@ -1,7 +1,0 @@
-Name: Ribbed knit cardigan
-Brand: Mango
-Price: 87$
-Description: Premium wool-blend fabric with a thick, substantial knit texture, featuring a soft and smooth surface, excellent warmth retention, and the ability to maintain its shape well.
-
-Image: knitwear4.avif
-Image[]: knitwear4_1.png

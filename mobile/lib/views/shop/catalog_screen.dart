@@ -197,17 +197,24 @@ class _CatalogScreenState extends State<CatalogScreen> {
       return;
     }
     final next = !(product['isFavorite'] as bool);
-    if (productId != null) {
-      if (next) {
-        await ApiService.addFavorite(productId);
-      } else {
-        await ApiService.removeFavorite(productId);
+    try {
+      if (productId != null) {
+        if (next) {
+          await ApiService.addFavorite(productId);
+        } else {
+          await ApiService.removeFavorite(productId);
+        }
       }
+      if (!mounted) return;
+      setState(() {
+        product['isFavorite'] = next;
+      });
+    } catch (e) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Failed to update favorite: $e')),
+      );
     }
-    if (!mounted) return;
-    setState(() {
-      product['isFavorite'] = next;
-    });
   }
 
   @override

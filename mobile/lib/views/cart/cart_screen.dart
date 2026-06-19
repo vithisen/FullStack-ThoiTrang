@@ -131,13 +131,20 @@ class _CartScreenState extends State<CartScreen> {
   Future<void> _deleteCartItem(int index) async {
     final item = _cartItems[index];
     final itemId = item['apiId'] as int?;
-    if (itemId != null) {
-      await ApiService.deleteCartItem(itemId);
+    try {
+      if (itemId != null) {
+        await ApiService.deleteCartItem(itemId);
+      }
+      if (!mounted) return;
+      setState(() {
+        _cartItems.removeAt(index);
+      });
+    } catch (e) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Failed to delete item: $e')),
+      );
     }
-    if (!mounted) return;
-    setState(() {
-      _cartItems.removeAt(index);
-    });
   }
 
   Future<void> _changeQuantity(int index, int nextQuantity) async {
@@ -147,13 +154,20 @@ class _CartScreenState extends State<CartScreen> {
       return;
     }
     final itemId = item['apiId'] as int?;
-    if (itemId != null) {
-      await ApiService.updateCartItem(itemId, nextQuantity);
+    try {
+      if (itemId != null) {
+        await ApiService.updateCartItem(itemId, nextQuantity);
+      }
+      if (!mounted) return;
+      setState(() {
+        item['quantity'] = nextQuantity;
+      });
+    } catch (e) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Failed to update quantity: $e')),
+      );
     }
-    if (!mounted) return;
-    setState(() {
-      item['quantity'] = nextQuantity;
-    });
   }
 
   Future<void> _addCartItemToFavorite(Map<String, dynamic> item) async {
@@ -164,13 +178,20 @@ class _CartScreenState extends State<CartScreen> {
       );
       return;
     }
-    if (productId != null) {
-      await ApiService.addFavorite(productId);
+    try {
+      if (productId != null) {
+        await ApiService.addFavorite(productId);
+      }
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Added ${item['name']} to favorites!')),
+      );
+    } catch (e) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Failed to save favorite: $e')),
+      );
     }
-    if (!mounted) return;
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text('Added ${item['name']} to favorites!')),
-    );
   }
 
   Map<String, dynamic> _mapCartItem(Map<String, dynamic> item) {
