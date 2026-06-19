@@ -12,7 +12,7 @@ class CategoriesScreen extends StatefulWidget {
 
 class _CategoriesScreenState extends State<CategoriesScreen> {
   int _activeSubTab = 0;
-  List<Map<String, dynamic>> _categories = [];
+  Map<String, Map<String, dynamic>> _categoryMap = {};
   bool _isLoading = true;
 
   @override
@@ -26,26 +26,10 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
       final data = await ApiService.categories();
       if (!mounted) return;
       setState(() {
-        final categoryMap = {
+        _categoryMap = {
           for (final item in data.whereType<Map<String, dynamic>>())
             '${item['categoryName'] ?? ''}': item,
         };
-        _categories = ['New', 'Clothes', 'Shoes', 'Accessories'].map((name) {
-          final item = categoryMap[name];
-          return {
-            "id": item?['id'],
-            "name": name,
-            "img":
-                item?['image'] ??
-                (name == 'Shoes'
-                    ? "assets/picture/shoes/shoes1.webp"
-                    : name == 'Accessories'
-                    ? "assets/picture/accesories/accesories1.webp"
-                    : name == 'New'
-                    ? "assets/picture/categories/new.webp"
-                    : "assets/picture/categories/clothes.webp"),
-          };
-        }).toList();
         _isLoading = false;
       });
     } catch (_) {
@@ -54,6 +38,84 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
         _isLoading = false;
       });
     }
+  }
+
+  String get _activeAudience => switch (_activeSubTab) {
+    1 => 'Men',
+    2 => 'Kids',
+    _ => 'Women',
+  };
+
+  List<Map<String, dynamic>> get _visibleCategories {
+    if (_activeAudience == 'Men') {
+      return [
+        _categoryItem('New', 'assets/picture/men/clothes/clothes1.webp'),
+        _categoryItem(
+          'Clothes',
+          'assets/picture/men/clothes/clothes2.webp',
+          q: 'men/clothes',
+        ),
+        _categoryItem(
+          'Shoes',
+          'assets/picture/men/shoes/menshoes1.webp',
+          q: 'men/shoes',
+        ),
+        _categoryItem(
+          'Accessories',
+          'assets/picture/men/accesories/accesories1.webp',
+          q: 'men/accesories',
+        ),
+      ];
+    }
+    if (_activeAudience == 'Kids') {
+      return [
+        _categoryItem('New', 'assets/picture/kids/clothes/kclothes1.webp'),
+        _categoryItem(
+          'Clothes',
+          'assets/picture/kids/clothes/kclothes2.webp',
+          q: 'kids/clothes',
+        ),
+        _categoryItem(
+          'Shoes',
+          'assets/picture/kids/shoes/kshoes1.webp',
+          q: 'kids/shoes',
+        ),
+        _categoryItem(
+          'Accessories',
+          'assets/picture/kids/accesories/k_accesories1.webp',
+          q: 'kids/accesories',
+        ),
+      ];
+    }
+    return ['New', 'Clothes', 'Shoes', 'Accessories'].map((name) {
+      final item = _categoryMap[name];
+      return _categoryItem(
+        name,
+        item?['image'] ??
+            (name == 'Shoes'
+                ? 'assets/picture/shoes/shoes1.webp'
+                : name == 'Accessories'
+                ? 'assets/picture/accesories/accesories1.webp'
+                : name == 'New'
+                ? 'assets/picture/categories/new.webp'
+                : 'assets/picture/categories/clothes.webp'),
+        id: item?['id'],
+      );
+    }).toList();
+  }
+
+  Map<String, dynamic> _categoryItem(
+    String name,
+    String image, {
+    Object? id,
+    String? q,
+  }) {
+    return {
+      'id': id,
+      'name': name,
+      'img': image,
+      if (q != null) 'q': q,
+    };
   }
 
   @override
@@ -158,11 +220,11 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
                         ListView.separated(
                           shrinkWrap: true,
                           physics: const NeverScrollableScrollPhysics(),
-                          itemCount: _categories.length,
+                          itemCount: _visibleCategories.length,
                           separatorBuilder: (context, index) =>
                               const SizedBox(height: 16),
                           itemBuilder: (context, index) {
-                            final item = _categories[index];
+                            final item = _visibleCategories[index];
                             return GestureDetector(
                               onTap: () => _openCategory(item),
                               child: Container(
@@ -258,7 +320,9 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
   void _openCategory(Map<String, dynamic> item) {
     final name = item['name'] as String;
     final id = item['id'] as int?;
-    if (name == 'Clothes') {
+    final audience = _activeAudience;
+    final audienceId = _categoryMap[audience]?['id'] as int?;
+    if (audience == 'Women' && name == 'Clothes') {
       Navigator.pushNamed(
         context,
         '/sub_categories',
@@ -271,11 +335,12 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
       context,
       '/catalog',
       arguments: {
-        if (name == 'Shoes') 'categoryId': id,
-        'category': name,
+        'categoryId': audience == 'Women' ? id : audienceId,
+        'category': audience == 'Women' ? name : audience,
         'subcategory': 'All Items',
         if (name == 'New') 'sort': 'newest',
-        if (name == 'Accessories') 'q': 'Dior',
+        if (audience != 'Women' && item['q'] != null) 'q': item['q'],
+        if (audience == 'Women' && name == 'Accessories') 'q': 'Dior',
       },
     );
   }

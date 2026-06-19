@@ -6,6 +6,7 @@ import com.fashion.shop.entity.ProductAttribute;
 import com.fashion.shop.repository.AttributeValueRepository;
 import com.fashion.shop.repository.BrandRepository;
 import com.fashion.shop.repository.CategoryRepository;
+import com.fashion.shop.repository.GalleryImageRepository;
 import com.fashion.shop.repository.ProductAttributeRepository;
 import com.fashion.shop.repository.ProductCategoryRepository;
 import com.fashion.shop.repository.ProductRepository;
@@ -40,6 +41,7 @@ public class CatalogController {
     private final ProductTagRepository productTagRepository;
     private final CategoryRepository categoryRepository;
     private final BrandRepository brandRepository;
+    private final GalleryImageRepository galleryImageRepository;
     private final ProductAttributeRepository productAttributeRepository;
     private final AttributeValueRepository attributeValueRepository;
     private final SlideshowRepository slideshowRepository;
@@ -63,7 +65,7 @@ public class CatalogController {
             .filter(product -> categoryId == null || productCategoryRepository.findByProductId(product.getId()).stream()
                 .anyMatch(productCategory -> categoryIds.contains(productCategory.getCategory().getId())))
             .filter(product -> brandId == null || (product.getBrand() != null && product.getBrand().getId().equals(brandId)))
-            .filter(product -> q == null || q.isBlank() || product.getProductName().toLowerCase().contains(q.trim().toLowerCase()))
+            .filter(product -> matchesQuery(product, q))
             .filter(product -> minPrice == null || product.getSalePrice().compareTo(minPrice) >= 0)
             .filter(product -> maxPrice == null || product.getSalePrice().compareTo(maxPrice) <= 0)
             .filter(product -> size == null || size.isBlank() || attributeValueExists("Size", size))
@@ -72,6 +74,18 @@ public class CatalogController {
             .sorted(productComparator(sort))
             .map(mapper::product)
             .toList();
+    }
+
+    private boolean matchesQuery(Product product, String q) {
+        if (q == null || q.isBlank()) {
+            return true;
+        }
+        String query = q.trim().toLowerCase();
+        if (product.getProductName() != null && product.getProductName().toLowerCase().contains(query)) {
+            return true;
+        }
+        return galleryImageRepository.findByProductId(product.getId()).stream()
+            .anyMatch(image -> image.getImage() != null && image.getImage().toLowerCase().contains(query));
     }
 
     @GetMapping("/products/{id}")
