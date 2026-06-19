@@ -25,6 +25,7 @@ class _CatalogScreenState extends State<CatalogScreen> {
   String? _selectedColor;
   String? _query;
   String? _assetPathQuery;
+  String _audience = 'Women';
   bool? _saleOnly;
   String _sort = 'newest';
   String _displayTitle = "Women's tops";
@@ -49,8 +50,13 @@ class _CatalogScreenState extends State<CatalogScreen> {
     final args =
         (ModalRoute.of(context)?.settings.arguments as Map<String, dynamic>?) ??
         {'category': 'Clothes', 'subcategory': 'Tops'};
-    _categoryId = args['categoryId'] as int?;
+    final assetOnly = args['assetOnly'] as bool? ?? false;
+    _categoryId = assetOnly ? null : args['categoryId'] as int?;
     _brandId = args['brandId'] as int?;
+    _audience =
+        (args['audience'] as String?) ??
+        (args['category'] as String?) ??
+        'Women';
     final routeQuery = args['q'] as String?;
     if (_isAssetPathQuery(routeQuery)) {
       _assetPathQuery = routeQuery;
@@ -63,11 +69,19 @@ class _CatalogScreenState extends State<CatalogScreen> {
     _sort = args['sort'] as String? ?? _sort;
     final String category = args['category'] ?? "Clothes";
     final String subcategory = args['subcategory'] ?? "Tops";
-    _displayTitle =
-        category == "New" || category == "Shoes" || category == "Accessories"
-        ? category
-        : "Women's ${subcategory.toLowerCase()}";
+    _displayTitle = _titleFor(category, subcategory);
     _loadProducts();
+  }
+
+  String _titleFor(String category, String subcategory) {
+    final prefix = _audience == 'Kids' ? "Kids'" : "$_audience's";
+    if (subcategory == 'All Items') {
+      return category == _audience ? "$prefix all items" : category;
+    }
+    if (category == "New" || category == "Shoes" || category == "Accessories") {
+      return category;
+    }
+    return "$prefix ${subcategory.toLowerCase()}";
   }
 
   Future<void> _loadProducts() async {

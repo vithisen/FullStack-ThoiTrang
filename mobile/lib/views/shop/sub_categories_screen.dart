@@ -11,6 +11,7 @@ class SubCategoriesScreen extends StatefulWidget {
 
 class _SubCategoriesScreenState extends State<SubCategoriesScreen> {
   late final String _categoryName;
+  late final String _audience;
   late final int? _categoryId;
   bool _didInitArgs = false;
   bool _isLoadingCategories = true;
@@ -28,6 +29,7 @@ class _SubCategoriesScreenState extends State<SubCategoriesScreen> {
     _categoryName =
         args['category'] as String? ??
         (rawArgs is String ? rawArgs : "Clothes");
+    _audience = args['audience'] as String? ?? "Women";
     _categoryId = args['categoryId'] as int?;
     _loadCategoryIds();
   }
@@ -111,6 +113,7 @@ class _SubCategoriesScreenState extends State<SubCategoriesScreen> {
     return {
       'categoryId': mappedId,
       'category': _categoryName,
+      'audience': _audience,
       'subcategory': subcategory,
       if (query != null) 'q': query,
     };
@@ -164,6 +167,7 @@ class _SubCategoriesScreenState extends State<SubCategoriesScreen> {
                     arguments: {
                       'categoryId': _categoryId,
                       'category': _categoryName,
+                      'audience': _audience,
                       'subcategory': 'All Items',
                     },
                   );

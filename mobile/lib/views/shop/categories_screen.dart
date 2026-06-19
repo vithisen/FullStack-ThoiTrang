@@ -115,12 +115,7 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
     Object? id,
     String? q,
   }) {
-    return {
-      'id': id,
-      'name': name,
-      'img': image,
-      if (q != null) 'q': q,
-    };
+    return {'id': id, 'name': name, 'img': image, if (q != null) 'q': q};
   }
 
   @override
@@ -331,7 +326,7 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
       Navigator.pushNamed(
         context,
         '/sub_categories',
-        arguments: {'categoryId': id, 'category': name},
+        arguments: {'categoryId': id, 'category': name, 'audience': audience},
       );
       return;
     }
@@ -340,12 +335,13 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
       context,
       '/catalog',
       arguments: {
-        if (!(audience == 'Women' && name == 'New'))
+        if (item['q'] == null && !(audience == 'Women' && name == 'New'))
           'categoryId': audience == 'Women' ? id : audienceId,
         'category': audience == 'Women' ? name : audience,
+        'audience': audience,
         'subcategory': 'All Items',
         if (name == 'New') 'sort': 'newest',
-        if (item['q'] != null) 'q': item['q'],
+        if (item['q'] != null) ...{'q': item['q'], 'assetOnly': true},
       },
     );
   }

@@ -104,12 +104,94 @@ public class ApiRequestLoggingFilter extends OncePerRequestFilter {
         byte[] content = response.getContentAsByteArray();
         if (content.length == 0) return "-";
         String body = new String(content, StandardCharsets.UTF_8);
-        return limit(maskSensitive(body), 600);
+        return summarizeJson(maskSensitive(body));
     }
 
     private String maskSensitive(String value) {
         Matcher matcher = SENSITIVE_FIELD.matcher(value);
         return matcher.replaceAll("$1***$3");
+    }
+
+    private String summarizeJson(String value) {
+        String compact = value.replaceAll("\\s+", " ").trim();
+        if (compact.startsWith("[")) {
+            return "items=" + countTopLevelArrayItems(compact);
+        }
+        if (compact.startsWith("{")) {
+            StringBuilder summary = new StringBuilder();
+            appendJsonField(summary, compact, "id");
+            appendJsonField(summary, compact, "email");
+            appendJsonField(summary, compact, "message");
+            appendJsonField(summary, compact, "orderTotal");
+            appendJsonField(summary, compact, "subtotal");
+            appendJsonField(summary, compact, "total");
+            appendJsonArrayCount(summary, compact, "items");
+            if (summary.length() > 0) {
+                return summary.toString().trim();
+            }
+        }
+        return limit(compact, 240);
+    }
+
+    private int countTopLevelArrayItems(String value) {
+        int depth = 0;
+        int count = 0;
+        boolean inString = false;
+        boolean hasItem = false;
+        for (int index = 0; index < value.length(); index++) {
+            char current = value.charAt(index);
+            char previous = index == 0 ? '\0' : value.charAt(index - 1);
+            if (current == '"' && previous != '\\') {
+                inString = !inString;
+            }
+            if (inString) continue;
+            if (current == '{' || current == '[') {
+                depth++;
+                if (depth == 2) hasItem = true;
+            } else if (current == '}' || current == ']') {
+                depth--;
+            } else if (current == ',' && depth == 1) {
+                count++;
+            }
+        }
+        return hasItem ? count + 1 : 0;
+    }
+
+    private void appendJsonField(StringBuilder summary, String json, String field) {
+        Matcher matcher = Pattern.compile("\"" + field + "\"\\s*:\\s*(\"[^\"]*\"|-?\\d+(?:\\.\\d+)?|true|false|null)").matcher(json);
+        if (matcher.find()) {
+            summary.append(field).append("=").append(matcher.group(1)).append(" ");
+        }
+    }
+
+    private void appendJsonArrayCount(StringBuilder summary, String json, String field) {
+        Matcher matcher = Pattern.compile("\"" + field + "\"\\s*:\\s*\\[").matcher(json);
+        if (matcher.find()) {
+            int start = matcher.end() - 1;
+            int end = findMatchingArrayEnd(json, start);
+            if (end > start) {
+                summary.append(field).append("=").append(countTopLevelArrayItems(json.substring(start, end + 1))).append(" ");
+            }
+        }
+    }
+
+    private int findMatchingArrayEnd(String json, int start) {
+        int depth = 0;
+        boolean inString = false;
+        for (int index = start; index < json.length(); index++) {
+            char current = json.charAt(index);
+            char previous = index == 0 ? '\0' : json.charAt(index - 1);
+            if (current == '"' && previous != '\\') {
+                inString = !inString;
+            }
+            if (inString) continue;
+            if (current == '[') depth++;
+            if (current == ']') {
+                depth--;
+                if (depth == 0) return index;
+            }
+        }
+        return -1;
     }
 
     private String limit(String value, int maxLength) {
