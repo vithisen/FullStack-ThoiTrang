@@ -79,22 +79,3 @@ FullStack-ShopThoiTrang/
    Hoặc nhấn nút **Run/Debug** trên Android Studio.
 
 ---
-
-## Hướng dẫn Dọn dẹp & Đóng gói Bàn giao (Cho lập trình viên)
-
-Khi bạn muốn đóng gói (ZIP) dự án để gửi bàn giao cho khách hàng/sinh viên, hãy thực hiện các bước sau để **đảm bảo dự án nhẹ nhất** và **không bị lộ thông tin cá nhân** (như đường dẫn tuyệt đối hay tên máy tính của bạn):
-
-1. **Dọn dẹp Flutter app (Bắt buộc)**:
-   Mở terminal tại thư mục `mobile/` và chạy lệnh dọn dẹp cache:
-   ```bash
-   flutter clean
-   ```
-   Lệnh này sẽ tự động xóa các thư mục `build/`, `.dart_tool/` (nơi sinh ra cache chứa tên người dùng của bạn) và dọn dẹp các build artifact của Android/iOS.
-
-2. **Dọn dẹp các tệp cấu hình sinh ra trên máy bạn**:
-   Xóa các tệp cấu hình môi trường phát triển cá nhân:
-   - File `mobile/android/local.properties` (Chứa đường dẫn SDK Android trên máy bạn).
-   - Xóa các thư mục `.idea/` hoặc `.vscode/` nếu có.
-
-3. **Nén ZIP dự án**:
-   Nén toàn bộ thư mục `FullStack-ShopThoiTrang` thành file `.zip`. Khi sinh viên giải nén và mở bằng Android Studio hoặc VS Code, IDE sẽ tự động sinh lại file `local.properties` và `.dart_tool/` mới khớp với máy tính của họ mà không bị lỗi.
