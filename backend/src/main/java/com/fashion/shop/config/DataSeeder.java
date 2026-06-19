@@ -40,7 +40,8 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Map;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 @Component
 @RequiredArgsConstructor
@@ -167,6 +168,7 @@ public class DataSeeder implements CommandLineRunner {
             }
             saveImages(product, item.images());
         }
+        hideProductsMissingFromSeed(seed.products());
 
         for (SlideshowSeed item : seed.slideshows()) {
             Slideshow slideshow = slideshowRepository.findByPublishedTrueOrderByDisplayOrderAsc().stream()
@@ -241,6 +243,21 @@ public class DataSeeder implements CommandLineRunner {
                 .createdAt(LocalDateTime.now())
                 .build());
         }
+    }
+
+    private void hideProductsMissingFromSeed(List<ProductSeed> seededProducts) {
+        Set<String> seedSlugs = seededProducts.stream()
+            .map(ProductSeed::slug)
+            .collect(Collectors.toSet());
+        productRepository.findAll().stream()
+            .filter(product -> product.getSlug() != null)
+            .filter(product -> product.getSku() != null && product.getSku().startsWith("FS-"))
+            .filter(product -> !seedSlugs.contains(product.getSlug()))
+            .forEach(product -> {
+                product.setPublished(false);
+                product.setUpdatedAt(LocalDateTime.now());
+                productRepository.save(product);
+            });
     }
 
     private Brand brand(String brandName) {

@@ -98,8 +98,6 @@ class _SubCategoriesScreenState extends State<SubCategoriesScreen> {
       _ => subcategory,
     };
     final query = switch (subcategory) {
-      'Shirts & Blouses' => 'blouse',
-      'Cardigans & Sweaters' => 'sweater',
       'Blazers' => 'blazer',
       'Pants' => 'pants',
       'Jeans' => 'jeans',

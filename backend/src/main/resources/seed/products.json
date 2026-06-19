@@ -928,22 +928,6 @@
       "quantity": 47
     },
     {
-      "slug": "knitwear-ribbed-knit-cardigan-48",
-      "sku": "FS-0048",
-      "name": "Ribbed knit cardigan",
-      "brand": "Mango",
-      "salePrice": "87.00",
-      "comparePrice": null,
-      "shortDescription": "Premium wool-blend fabric with a thick, substantial knit texture, featuring a soft and smooth surface, excellent warmth retention,",
-      "description": "Premium wool-blend fabric with a thick, substantial knit texture, featuring a soft and smooth surface, excellent warmth retention, and the ability to maintain its shape well.",
-      "category": "Knitwear",
-      "tags": [],
-      "images": [
-        "assets/picture/knitwear/knitwear4.webp"
-      ],
-      "quantity": 48
-    },
-    {
       "slug": "men-accesories-denim-crossbody-bag-49",
       "sku": "FS-0049",
       "name": "Denim Crossbody Bag",
